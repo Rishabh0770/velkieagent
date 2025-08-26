@@ -72,46 +72,59 @@
     }
 
     /* secondary nav */
-    .sub-nav {
-      padding: 12px 0;
-    }
-    .sub-nav .container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.sub-nav {
+  padding: 14px 0;
+}
 
-    .sub-nav a {
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-    }
+.sub-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* links center */
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
-    .sub-nav a:hover,
-    .sub-nav a.active {
-      background: black;
-      color: white;
-    }
+.sub-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
 
-    .home-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: black;
-      color: white;
-      font-size: 18px;
-    }
+.sub-nav a i {
+  font-size: 22px;
+}
+
+.sub-nav a:hover,
+.sub-nav a.active {
+  background: #d63a3a; /* red hover/active bg */
+  color: white; /* text white */
+}
+
+.home-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #d63a3a; /* home icon same color */
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.home-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(214,58,58,0.6);
+}
+
 
     /* Hamburger */
     .hamburger {
@@ -170,42 +183,54 @@
   </div>
 
   <!-- main navbar -->
-  <div class="main-nav">
-    <div class="container">
-      <div class="logo">
-        <img src="logo1.0.png" alt="Logo">
+<div class="main-nav">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="logo1.0.png" alt="Logo">
+    </div>
+
+    <!-- Center Navbar Text -->
+    <div class="nav-center">
+      <a href="#" class="nav-link">www.vekliagentlist.com</a>
+    </div>
+
+    <!-- Right Side (Date + Hamburger) -->
+    <div style="display:flex; align-items:center; gap:15px;">
+      <div class="date-box">
+        <div class="date-num" id="dayNum">26</div>
+        <div class="date-text">
+          <span id="dayName">Tue</span><br>
+          <span id="monthName">Aug</span>
+        </div>
       </div>
 
-      <div style="display:flex; align-items:center; gap:15px;">
-        <div class="date-box">
-          <div class="date-num" id="dayNum">26</div>
-          <div class="date-text">
-            <span id="dayName">Tue</span><br>
-            <span id="monthName">Aug</span>
-          </div>
-        </div>
-
-        <!-- Hamburger Icon -->
-        <div class="hamburger" onclick="toggleMenu()">
-          <i class="bi bi-list"></i>
-        </div>
+      <!-- Hamburger Icon -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="bi bi-list"></i>
       </div>
     </div>
   </div>
+</div>
+
 
   <!-- red line -->
   <div class="red-line"></div>
 
   <!-- secondary nav -->
   <div class="sub-nav">
-    <div class="container">
-      <div class="home-icon"><i class="bi bi-house-door-fill"></i></div>
-      <a href="#"><i class="bi bi-shield-lock-fill"></i> Admin</a>
-      <a href="#"><i class="bi bi-person-badge-fill"></i> Sub-Admin</a>
-      <a href="#"><i class="bi bi-person-gear"></i> Super</a>
-      <a href="#"><i class="bi bi-person-fill"></i> Master</a>
-    </div>
+  <div class="container">
+    <a href="#maintable" class="active" data-type="ALL"><i class="bi bi-house-door-fill"></i> Home</a>
+    <a href="#" data-type="ADMIN"><i class="bi bi-shield-lock-fill"></i> Admin</a>
+    <a href="#" data-type="SUB-ADMIN"><i class="bi bi-person-badge-fill"></i> Sub-Admin</a>
+    <a href="#" data-type="SUPER"><i class="bi bi-person-gear"></i> Super</a>
+    <a href="#" data-type="MASTER"><i class="bi bi-person-fill"></i> Master</a>
   </div>
+</div>
+
+
+
 
   <!-- Hamburger Menu -->
   <div class="hamburger-menu" id="menu">
@@ -216,9 +241,8 @@
   </div>
 
 
-  
-<div class="container mt-4">
-  <table class="table table-bordered">
+<div id="maintable" class="container mt-4">
+  <table class="table table-bordered" id="agentTable">
     <thead>
       <!-- Title row -->
       <tr>
@@ -233,48 +257,114 @@
         </th>
       </tr>
       <!-- Header row -->
-<tr class="header-row">
-  <th>Type</th>
-  <th>Name</th>
-  <th>ID No</th>
-  <th>WhatsApp</th>
-  <th>Phone Number</th>
-  <th>Admin</th>
-</tr>
-
+      <tr class="header-row">
+        <th>Type</th>
+        <th>Name</th>
+        <th>ID No</th>
+        <th>WhatsApp</th>
+        <th>Phone Number</th>
+        <th>Admin</th>
+      </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>ADMIN</td>
-        <td>Zeeshan Malik</td>
-        <td>01</td>
-        <td>
-          <a href="https://wa.me/639308682092" target="_blank">
-            <i class="bi bi-whatsapp text-success fs-4"></i>
-          </a>
-        </td>
-        <td><a href="tel:+639308682092">+639308682092</a></td>
-        <td>অ্যাডমিন</td>
-      </tr>
-      <tr>
-        <td>HOME</td>
-        <td>Joshim</td>
-        <td>1255</td>
-        <td>
-          <a href="https://wa.me/15135382843" target="_blank">
-            <i class="bi bi-whatsapp text-success fs-4"></i>
-          </a>
-        </td>
-        <td><a href="tel:+15135382843">+15135382843</a></td>
-        <td>অ্যাডমিন</td>
-      </tr>
+      <tr><td>ADMIN</td><td>Zeeshan Malik</td><td>01</td><td><a href="https://wa.me/639308682092" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682092">+639308682092</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Joshim 2</td><td>02</td><td><a href="https://wa.me/639308682093" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682093">+639308682093</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Rafiq 3</td><td>03</td><td><a href="https://wa.me/639308682094" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682094">+639308682094</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Farhan 4</td><td>04</td><td><a href="https://wa.me/639308682095" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682095">+639308682095</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>ADMIN</td><td>Imran 5</td><td>05</td><td><a href="https://wa.me/639308682096" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682096">+639308682096</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Arafat 6</td><td>06</td><td><a href="https://wa.me/639308682097" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682097">+639308682097</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Salman 7</td><td>07</td><td><a href="https://wa.me/639308682098" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682098">+639308682098</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Rashid 8</td><td>08</td><td><a href="https://wa.me/639308682099" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682099">+639308682099</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Shahid 9</td><td>09</td><td><a href="https://wa.me/639308682100" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682100">+639308682100</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>ADMIN</td><td>Tariq 10</td><td>10</td><td><a href="https://wa.me/639308682101" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682101">+639308682101</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Ali 11</td><td>11</td><td><a href="https://wa.me/639308682102" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682102">+639308682102</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUB-ADMIN</td><td>Hasan 12</td><td>12</td><td><a href="https://wa.me/639308682103" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682103">+639308682103</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Hassan 13</td><td>13</td><td><a href="https://wa.me/639308682104" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682104">+639308682104</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Fahim 14</td><td>14</td><td><a href="https://wa.me/639308682105" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682105">+639308682105</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUB-ADMIN</td><td>Arif 15</td><td>15</td><td><a href="https://wa.me/639308682106" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682106">+639308682106</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Feroz 16</td><td>16</td><td><a href="https://wa.me/639308682107" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682107">+639308682107</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUB-ADMIN</td><td>Jamil 17</td><td>17</td><td><a href="https://wa.me/639308682108" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682108">+639308682108</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Bilal 18</td><td>18</td><td><a href="https://wa.me/639308682109" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682109">+639308682109</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUB-ADMIN</td><td>Omar 19</td><td>19</td><td><a href="https://wa.me/639308682110" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682110">+639308682110</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Usman 20</td><td>20</td><td><a href="https://wa.me/639308682111" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682111">+639308682111</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Shafique 21</td><td>21</td><td><a href="https://wa.me/639308682112" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682112">+639308682112</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Riyaz 22</td><td>22</td><td><a href="https://wa.me/639308682113" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682113">+639308682113</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Sami 23</td><td>23</td><td><a href="https://wa.me/639308682114" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682114">+639308682114</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Taimur 24</td><td>24</td><td><a href="https://wa.me/639308682115" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682115">+639308682115</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Waseem 25</td><td>25</td><td><a href="https://wa.me/639308682116" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682116">+639308682116</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Zubair 26</td><td>26</td><td><a href="https://wa.me/639308682117" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682117">+639308682117</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUB-ADMIN</td><td>Faiz 27</td><td>27</td><td><a href="https://wa.me/639308682118" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682118">+639308682118</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Hashim 28</td><td>28</td><td><a href="https://wa.me/639308682119" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682119">+639308682119</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Adnan 29</td><td>29</td><td><a href="https://wa.me/639308682120" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682120">+639308682120</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Rashad 30</td><td>30</td><td><a href="https://wa.me/639308682121" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682121">+639308682121</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Junaid 31</td><td>31</td><td><a href="https://wa.me/639308682122" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682122">+639308682122</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Shoaib 32</td><td>32</td><td><a href="https://wa.me/639308682123" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682123">+639308682123</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Faisal 33</td><td>33</td><td><a href="https://wa.me/639308682124" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682124">+639308682124</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Akram 34</td><td>34</td><td><a href="https://wa.me/639308682125" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682125">+639308682125</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Shahbaz 35</td><td>35</td><td><a href="https://wa.me/639308682126" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682126">+639308682126</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Nasir 36</td><td>36</td><td><a href="https://wa.me/639308682127" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682127">+639308682127</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Sajid 37</td><td>37</td><td><a href="https://wa.me/639308682128" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682128">+639308682128</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Imtiaz 38</td><td>38</td><td><a href="https://wa.me/639308682129" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682129">+639308682129</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Yasir 39</td><td>39</td><td><a href="https://wa.me/639308682130" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682130">+639308682130</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Zahir 40</td><td>40</td><td><a href="https://wa.me/639308682131" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682131">+639308682131</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Shabbir 41</td><td>41</td><td><a href="https://wa.me/639308682132" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682132">+639308682132</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Tahir 42</td><td>42</td><td><a href="https://wa.me/639308682133" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682133">+639308682133</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Azhar 43</td><td>43</td><td><a href="https://wa.me/639308682134" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682134">+639308682134</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>HOME</td><td>Imran 44</td><td>44</td><td><a href="https://wa.me/639308682135" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682135">+639308682135</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Fawad 45</td><td>45</td><td><a href="https://wa.me/639308682136" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682136">+639308682136</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Asim 46</td><td>46</td><td><a href="https://wa.me/639308682137" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682137">+639308682137</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Rizwan 47</td><td>47</td><td><a href="https://wa.me/639308682138" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682138">+639308682138</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>MASTER</td><td>Javed 48</td><td>48</td><td><a href="https://wa.me/639308682139" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682139">+639308682139</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>OFFICE</td><td>Nadeem 49</td><td>49</td><td><a href="https://wa.me/639308682140" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682140">+639308682140</a></td><td>অ্যাডমিন</td></tr>
+      <tr><td>SUPER</td><td>Sultan 50</td><td>50</td><td><a href="https://wa.me/639308682141" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682141">+639308682141</a></td><td>অ্যাডমিন</td></tr>
     </tbody>
   </table>
 </div>
 
 
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Logo / Brand -->
+      <div class="footer-logo">
+        <img src="logo1.0.png" alt="Logo">
+        <span class="brand-name"></span>
+      </div>
 
-  
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#maintable">Home</a>
+        <a href="#">Admin</a>
+        <a href="#">Sub-Admin</a>
+        <a href="#">Super</a>
+        <a href="#">Master</a>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>WhatsApp: <a href="https://wa.me/639308682092" target="_blank">+63 930 868 2092</a></p>
+        <p>Phone: <a href="tel:+639308682092">+63 930 868 2092</a></p>
+        <p>Email: <a href="mailto:info@velkiagentlist.com">info@velkiagentlist.com</a></p>
+
+        <!-- Social Icons -->
+        <div class="footer-social">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Velki Agent List. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
   <script>
     // auto update date
@@ -302,5 +392,48 @@
     });
   </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const links = document.querySelectorAll(".sub-nav a");
+  const rows = document.querySelectorAll("#agentTable tbody tr"); // table id = agentTable
+
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      // Active link toggle
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+
+      const type = this.dataset.type; // get type from nav link
+
+      rows.forEach(row => {
+        const rowType = row.cells[0].textContent.trim(); // first column = Type
+        if(type === "ALL" || rowType.toUpperCase() === type) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    });
+  });
+});
+</script>
+
+<!-- Shuffle Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const table = document.getElementById("agentTable");
+    const tbody = table.querySelector("tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    // Fisher-Yates Shuffle Algorithm
+    for (let i = rows.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      tbody.appendChild(rows[j]); 
+      rows.splice(j, 1); 
+    }
+  });
+</script>
 </body>
 </html>

@@ -1,7 +1,22 @@
-/* Container ko full width ke saath margin do */
+/* Body aur html ke default margin/padding remove */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar ke neeche extra space na ho */
+.navbar {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 100%;          /* Full width */
+  border-radius: 0;     /* Rounded na ho */
+}
+
+/* Container full width me navbar ke align ho */
 .container {
-  max-width: 95%;   /* poora screen cover kare, thoda margin bache */
-  margin: 30px auto;
+  max-width: 100%;   /* full screen */
+  margin: 0 auto;    /* center align */
+  padding: 0 10px;   /* side se thoda space */
 }
 
 /* Table styling */
@@ -34,6 +49,17 @@
   font-size: 15px;
   border-top: 1px solid #ddd;
 }
+/* Vertical lines */
+.table th,
+.table td {
+  border-left: 1px solid #ddd; /* left border for separation */
+}
+
+/* Optional: remove first column's left border */
+.table th:first-child,
+.table td:first-child {
+  border-left: none;
+}
 
 /* Alternate row colors */
 .table tbody tr:nth-child(odd) {
@@ -48,22 +74,25 @@
   background-color: #f1f7ff; /* हल्का blue hover */
   transition: background-color 0.3s ease-in-out;
 }
+
 /* Notice row style */
 .table thead tr:nth-child(2) th {
   background-color: #fdf2f2;  /* halka pink notice bg */
   font-size: 14px;
   padding: 8px;
 }
-/* Blue Header */
+
+/* Orange Header */
 .table thead tr.header-row th {
-  background-color: #0d6efd; /* Bootstrap Blue */
-  color: #fff;
+  background-color: #d63a3a !important; /* Orange */
+  color: #fff !important;
   text-align: center;
   vertical-align: middle;
   padding: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+
 /* WhatsApp Icon hover */
 .table .bi-whatsapp {
   transition: transform 0.2s ease-in-out;
@@ -88,12 +117,122 @@
     font-size: 14px;
   }
 }
-.container {
-  max-width: 95%;
-  margin: 30px auto;
+.whatsapp-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
 }
 
-.table thead tr.header-row th {
-  background-color: #fd7e14 !important; /* Orange */
-  color: #fff !important;
+
+.nav-center .nav-link {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(191, 191, 0);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.nav-center .nav-link:hover {
+  color: orange; /* hover pe halka effect */
+}
+
+
+
+.site-footer {
+  background: #2c2c2c; /* slightly lighter than #222 */
+  color: #fff;
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.site-footer a:hover {
+  color: #d63a3a;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #d63a3a;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.footer-contact p {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.footer-social {
+  margin-top: 10px;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+}
+/* Footer ke upar ka gap kam karne ke liye */
+#maintable {
+  margin-bottom: 0; /* ya thoda adjust karke 20px rakh sakte ho */
+}
+
+.site-footer {
+  padding-top: 30px; /* upar ka space kam kar diya */
+  padding-bottom: 20px;
+}
+#maintable.container {
+  margin-bottom: 40px; /* ya 0 */
 }
