@@ -104,14 +104,6 @@ body, html {
   letter-spacing: 0.5px;
 }
 
-/* WhatsApp Icon hover */
-.table .bi-whatsapp {
-  transition: transform 0.2s ease-in-out;
-}
-.table .bi-whatsapp:hover {
-  transform: scale(1.2);
-  color: #25D366;
-}
 
 /* Phone link hover */
 .table a[href^="tel"] {
@@ -122,18 +114,6 @@ body, html {
   text-decoration: underline;
 }
 
-/* Responsive adjustment */
-@media (max-width: 768px) {
-  .table {
-    font-size: 14px;
-  }
-}
-.whatsapp-icon {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
-}
 
 
 .nav-center .nav-link {
@@ -224,17 +204,36 @@ body, html {
   font-size: 14px;
   color: #aaa;
 }
-
-/* Responsive */
+/* ✅ Mobile Responsive Footer */
 @media (max-width: 768px) {
   .footer-top {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;   /* sab center me */
+    text-align: center;    /* text bhi center */
+    gap: 25px;             /* sections ke beech spacing */
   }
+
   .footer-logo {
-    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    margin-bottom: 8px;
+  }
+
+  .footer-contact p {
+    font-size: 13px;  /* thoda chhota font mobile ke liye */
+  }
+
+  .footer-social {
+    margin-top: 12px;
+  }
+
+  .footer-social a {
+    margin: 0 8px; /* icons ke beech equal spacing */
   }
 }
+
 /* Footer ke upar ka gap kam karne ke liye */
 #maintable {
   margin-bottom: 0; /* ya thoda adjust karke 20px rakh sakte ho */
@@ -247,6 +246,8 @@ body, html {
 #maintable.container {
   margin-bottom: 40px; /* ya 0 */
 }
+
+
 
 /* Header row bottom corners */
 .table .header-row th:first-child {
@@ -289,8 +290,7 @@ body, html {
   padding: 0 10px; /* side padding same as header/footer */
   margin: 0 auto;
 }
-
-/* Table styling */
+/* ------------------ TABLE STYLING ------------------ */
 #maintable table {
   width: 100%; /* table fills container */
   border-collapse: collapse;
@@ -302,7 +302,7 @@ body, html {
 
 #maintable th,
 #maintable td {
-  padding: 8px 6px; /* smaller padding for mobile */
+  padding: 8px 6px; /* default padding for desktop */
   text-align: center;
   font-size: 14px;
   word-wrap: break-word; /* wrap long text */
@@ -322,7 +322,7 @@ body, html {
   background-color: #fff5f5;
 }
 
-/* Hover */
+/* Hover effect */
 #maintable tbody tr:hover {
   background-color: #f1f7ff;
   transition: 0.3s;
@@ -330,19 +330,61 @@ body, html {
 
 /* WhatsApp icon inside table */
 .whatsapp-icon {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
-/* Mobile adjustments */
+/* Phone links inside table */
+#maintable td a[href^="tel"] {
+  font-size: 12px; /* chhota font for phone */
+}
+
+#maintable td a,
+#maintable td {
+  white-space: nowrap;   /* ek hi line me rakhega */
+  overflow: hidden;      /* lamba text hide hoga */
+  text-overflow: ellipsis;
+}
+
+/* ------------------ MOBILE VIEW ONLY ------------------ */
 @media (max-width: 768px) {
-  #maintable th,
-  #maintable td {
-    font-size: 13px;
-    padding: 6px 4px;
+  #maintable {
+    width: 100%;        /* header/footer ke andar rahe */
+    overflow-x: hidden; /* scroll bar na aaye */
   }
 
   #maintable table {
-    table-layout: fixed; /* columns shrink to fit screen */
+    width: 100%;
+    table-layout: fixed; /* responsive layout */
+  }
+
+  #maintable th,
+  #maintable td {
+    font-size: 10px;        /* chhota font */
+    padding: 3px 1px;       /* kam padding */
+    white-space: nowrap;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #maintable thead tr.header-row th {
+    font-size: 10px;
+  }
+
+  /* Column widths adjust for mobile */
+  #maintable th:nth-child(3), 
+  #maintable td:nth-child(3) {
+    width: 5%;   /* ID column – super narrow */
+  }
+
+  #maintable th:nth-child(4), 
+  #maintable td:nth-child(4) {
+    width: 6%;   /* WhatsApp icon column – super narrow */
+  }
+
+  #maintable th:nth-child(5), 
+  #maintable td:nth-child(5) {
+    width: 25%;  /* Phone column – thoda bada */
   }
 }
