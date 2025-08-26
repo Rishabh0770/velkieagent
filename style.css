@@ -1,7 +1,18 @@
-/* Body aur html ke default margin/padding remove */
-body, html {
+/* Reset for all elements */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* makes width/padding easier to manage */
+}
+
+/* Optional: set default body styles */
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #fff;
 }
 
 /* Navbar ke neeche extra space na ho */
@@ -256,3 +267,82 @@ body, html {
 }
 
 
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full width for body & container */
+body, html {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 10px; /* side padding same as header/footer */
+  margin: 0 auto;
+}
+
+/* Table styling */
+#maintable table {
+  width: 100%; /* table fills container */
+  border-collapse: collapse;
+  table-layout: fixed; /* fixes column widths to fit container */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+#maintable th,
+#maintable td {
+  padding: 8px 6px; /* smaller padding for mobile */
+  text-align: center;
+  font-size: 14px;
+  word-wrap: break-word; /* wrap long text */
+  border: 1px solid #ddd;
+}
+
+#maintable thead tr.header-row th {
+  background-color: #d63a3a !important;
+  color: #fff !important;
+}
+
+/* Alternate rows */
+#maintable tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+#maintable tbody tr:nth-child(even) {
+  background-color: #fff5f5;
+}
+
+/* Hover */
+#maintable tbody tr:hover {
+  background-color: #f1f7ff;
+  transition: 0.3s;
+}
+
+/* WhatsApp icon inside table */
+.whatsapp-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #maintable th,
+  #maintable td {
+    font-size: 13px;
+    padding: 6px 4px;
+  }
+
+  #maintable table {
+    table-layout: fixed; /* columns shrink to fit screen */
+  }
+}

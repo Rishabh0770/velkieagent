@@ -32,39 +32,109 @@
       justify-content: flex-end;
     }
 
-    /* main navbar */
-    .main-nav {
-      padding: 12px 0;
-    }
-    .main-nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* Main Navbar */
+.main-nav {
+  width: 100%; /* full width */
+  box-sizing: border-box; /* padding include ho width me */
+  padding: 12px 15px;
+}
 
-    .logo img {
-      height: 40px;
-    }
+.main-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* container bhi full width */
+  margin: 0 auto;
+  flex-wrap: nowrap; /* mobile me wrap na ho */
+}
 
-    .date-box {
-      border: 1px solid #ddd;
-      border-radius: 30px;
-      padding: 6px 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+/* Logo */
+.logo img {
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+}
 
-    .date-num {
-      font-size: 18px;
-      font-weight: bold;
-    }
+/* Date Box */
+.date-box {
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+}
 
-    .date-text {
-      font-size: 12px;
-      line-height: 1.2;
-      text-align: left;
-    }
+.date-num {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.date-text {
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  width: 180px;
+  z-index: 1000;
+}
+
+.hamburger-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hamburger-menu a:hover {
+  background: #f5f5f5;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 10px 12px; /* thoda kam padding mobile me */
+  }
+
+  .main-nav .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .date-box {
+    padding: 4px 8px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Center text hide on mobile if needed */
+  .nav-center {
+    display: none;
+  }
+}
+
 
     /* red line */
     .red-line {
@@ -125,52 +195,32 @@
   box-shadow: 0 0 10px rgba(214,58,58,0.6);
 }
 
+/* Responsive for mobile - no scroll, icons removed */
+@media (max-width: 768px) {
+  .sub-nav {
+    padding: 6px 0; /* vertical padding chhota */
+  }
 
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
+  .sub-nav .container {
+    justify-content: space-between; /* evenly spread links */
+    gap: 0; /* gap remove */
+    flex-wrap: nowrap; /* ek line me rahe */
+    width: 100%;
+  }
 
-    .hamburger-menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      width: 180px;
-      z-index: 1000;
-    }
-    .hamburger-menu a {
-      display: block;
-      padding: 10px 15px;
-      color: black;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .hamburger-menu a:hover {
-      background: #f5f5f5;
-    }
+  .sub-nav a {
+    padding: 6px 0;       /* top-bottom padding chhota */
+    font-size: 14px;      /* chhota text */
+    flex: 1;              /* equally spread */
+    justify-content: center; /* text center */
+  }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .main-nav .container {
-        flex-direction: row;
-      }
-      .date-box {
-        padding: 4px 10px;
-      }
-      .sub-nav .container {
-        gap: 10px;
-      }
-      .hamburger {
-        display: block;
-      }
-    }
+  .sub-nav a i {
+    display: none; /* icons hide */
+  }
+}
+
+   
   </style>
 </head>
 <body>
@@ -228,8 +278,6 @@
     <a href="#" data-type="MASTER"><i class="bi bi-person-fill"></i> Master</a>
   </div>
 </div>
-
-
 
 
   <!-- Hamburger Menu -->
