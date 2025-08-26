@@ -1,0 +1,99 @@
+/* Container ko full width ke saath margin do */
+.container {
+  max-width: 95%;   /* poora screen cover kare, thoda margin bache */
+  margin: 30px auto;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Table header */
+.table th {
+  background-color: #212529 !important;
+  color: #fff !important;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Table cells */
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  border-top: 1px solid #ddd;
+}
+
+/* Alternate row colors */
+.table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* हल्का grey */
+}
+.table tbody tr:nth-child(even) {
+  background-color: #fff5f5; /* हल्का pink */
+}
+
+/* Hover effect */
+.table tbody tr:hover {
+  background-color: #f1f7ff; /* हल्का blue hover */
+  transition: background-color 0.3s ease-in-out;
+}
+/* Notice row style */
+.table thead tr:nth-child(2) th {
+  background-color: #fdf2f2;  /* halka pink notice bg */
+  font-size: 14px;
+  padding: 8px;
+}
+/* Blue Header */
+.table thead tr.header-row th {
+  background-color: #0d6efd; /* Bootstrap Blue */
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+/* WhatsApp Icon hover */
+.table .bi-whatsapp {
+  transition: transform 0.2s ease-in-out;
+}
+.table .bi-whatsapp:hover {
+  transform: scale(1.2);
+  color: #25D366;
+}
+
+/* Phone link hover */
+.table a[href^="tel"] {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.table a[href^="tel"]:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px;
+  }
+}
+.container {
+  max-width: 95%;
+  margin: 30px auto;
+}
+
+.table thead tr.header-row th {
+  background-color: #fd7e14 !important; /* Orange */
+  color: #fff !important;
+}
