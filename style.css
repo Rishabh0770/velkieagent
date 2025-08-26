@@ -251,20 +251,39 @@ body, html {
 
 /* Header row bottom corners */
 .table .header-row th:first-child {
-  border-bottom-left-radius: 13px; /* left bottom corner */
+  border-bottom-left-radius: 13px;
 }
 
 .table .header-row th:last-child {
-  border-bottom-right-radius: 13px; /* right bottom corner */
+  border-bottom-right-radius: 13px;
 }
 
 /* Table body first row top corners */
 .table tbody tr:first-child td:first-child {
-  border-top-left-radius: 13px; /* top left corner */
+  border-top-left-radius: 13px;
 }
 
 .table tbody tr:first-child td:last-child {
-  border-top-right-radius: 13px; /* top right corner */
+  border-top-right-radius: 13px;
+}
+
+/* 📱 Mobile adjustment */
+@media (max-width: 768px) {
+  .table .header-row th:first-child {
+    border-bottom-left-radius: 8px;
+  }
+
+  .table .header-row th:last-child {
+    border-bottom-right-radius: 8px;
+  }
+
+  .table tbody tr:first-child td:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  .table tbody tr:first-child td:last-child {
+    border-top-right-radius: 8px;
+  }
 }
 
 
@@ -386,5 +405,62 @@ body, html {
   #maintable th:nth-child(5), 
   #maintable td:nth-child(5) {
     width: 25%;  /* Phone column – thoda bada */
+  }
+}
+
+
+/* Title Row */
+thead tr:first-child th {
+  padding: 16px 0;
+  font-size: 20px;
+}
+
+/* Notice Row */
+.notice-cell {
+  background: #f8f9fa;
+  color: #212529;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 40px;
+  padding: 10px;
+}
+
+/* Notice Scrolling Text */
+.notice-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Header Row */
+.header-row th {
+  padding: 14px 0;
+  font-size: 16px;
+}
+
+/* 📱 Mobile Responsive (max 768px) */
+@media (max-width: 768px) {
+  thead tr:first-child th {
+    font-size: 16px;   /* Title row thoda chhota */
+    padding: 12px 0;
+  }
+
+  .notice-cell {
+    font-size: 12px;   /* Notice text chhota */
+    height: 35px;      /* Height thodi kam */
+    padding: 8px;
+  }
+
+  .header-row th {
+    font-size: 14px;   /* Header text chhota */
+    padding: 10px 0;
   }
 }
