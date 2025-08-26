@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VelkieAgent — Clone (Frontend)</title>
+
+  <!-- Bootstrap & FontAwesome (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Top notice (like the original site) -->
+  <div class="top-notice text-center py-2">
+    <div class="container">
+      <small>Important info / notice — demo clone (UI only)</small>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo1.0.png" class="me-2 logo-img" alt="logo">
+        <span class="brand-title">VelkieAgent</span>
+      </a>
+
+      <div class="ms-auto d-flex align-items-center">
+        <a class="btn btn-outline-primary me-2" href="login.html"><i class="fa fa-sign-in-alt me-1"></i> Login</a>
+        <a class="btn btn-primary" href="#list"><i class="fa fa-list me-1"></i> Agents</a>
+      </div>
+    </div>
+  </nav>
+
+<!-- Hero / Counters -->
+<header class="hero py-5 text-light" style="background: linear-gradient(135deg, #4A90E2, #50E3C2);">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      
+      <!-- Hero Text -->
+      <div class="col-lg-7">
+        <h1 class="display-5 fw-bold">Find agents quickly — demo clone</h1>
+        <p class="lead mb-4">Browse by category, click WhatsApp links, and see counts per type — UI only.</p>
+        <div class="d-flex gap-2 flex-wrap">
+          <a class="btn btn-white btn-lg shadow-sm" href="#list">Browse agents</a>
+          <a class="btn btn-outline-light btn-lg" href="dashboard.html">Admin (demo)</a>
+        </div>
+      </div>
+
+      <!-- Counters -->
+      <div class="col-lg-5">
+        <div class="row g-3 counters">
+
+          <div class="col-6">
+            <div class="counter-card p-4 text-center shadow-sm rounded-3 bg-white text-dark counter-hover">
+              <i class="bi bi-house-door-fill fs-3 mb-2"></i>
+              <div class="counter-number fs-3 fw-bold" id="count-HOME">0</div>
+              <div class="counter-label text-uppercase small">HOME</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="counter-card p-4 text-center shadow-sm rounded-3 bg-white text-dark counter-hover">
+              <i class="bi bi-gear-fill fs-3 mb-2"></i>
+              <div class="counter-number fs-3 fw-bold" id="count-SERVICE">0</div>
+              <div class="counter-label text-uppercase small">SERVICE</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="counter-card p-4 text-center shadow-sm rounded-3 bg-white text-dark counter-hover">
+              <i class="bi bi-person-badge-fill fs-3 mb-2"></i>
+              <div class="counter-number fs-3 fw-bold" id="count-ADMIN">0</div>
+              <div class="counter-label text-uppercase small">ADMIN</div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="counter-card p-4 text-center shadow-sm rounded-3 bg-white text-dark counter-hover">
+              <i class="bi bi-star-fill fs-3 mb-2"></i>
+              <div class="counter-number fs-3 fw-bold" id="count-SUPER">0</div>
+              <div class="counter-label text-uppercase small">SUPER</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="counter-card p-4 text-center shadow-lg rounded-3 bg-gradient text-white counter-hover" 
+                 style="background: linear-gradient(135deg, #F2994A, #F2C94C);">
+              <i class="bi bi-trophy-fill fs-3 mb-2"></i>
+              <div class="counter-number fs-3 fw-bold" id="count-MASTER">0</div>
+              <div class="counter-label text-uppercase small">MASTER</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+  <!-- Search + Tabs -->
+  <section id="list" class="py-5">
+    <div class="container">
+      <div class="row align-items-center mb-3">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input id="searchInput" type="text" class="form-control" placeholder="Search by name, id, phone...">
+            <button id="searchBtn" class="btn btn-primary"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <div class="btn-group" role="group" aria-label="types">
+            <button class="btn btn-outline-secondary type-filter active" data-type="ALL">All</button>
+            <button class="btn btn-outline-secondary type-filter" data-type="HOME">Home</button>
+            <button class="btn btn-outline-secondary type-filter" data-type="SERVICE">Service</button>
+            <button class="btn btn-outline-secondary type-filter" data-type="ADMIN">Admin</button>
+            <button class="btn btn-outline-secondary type-filter" data-type="SUPER">Super</button>
+            <button class="btn btn-outline-secondary type-filter" data-type="MASTER">Master</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agent list -->
+      <div id="agentsContainer" class="row g-3">
+        <!-- JS will render cards/rows here -->
+      </div>
+
+      <!-- Pagination placeholder (static for now) -->
+      <div class="mt-4 text-center">
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">›</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="py-4 bg-dark text-white">
+    <div class="container text-center small">
+      Demo clone — layout & UX only. Do not use copied content without permission.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

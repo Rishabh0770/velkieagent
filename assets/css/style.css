@@ -1,0 +1,165 @@
+/* Reset small */
+*{box-sizing:border-box}
+body{font-family:Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial; background:#f4f6fb; color:#1f2937; margin:0}
+
+/* Top notice */
+.top-notice{background:#fff3cd; color:#664d03; font-size:13px; border-bottom:1px solid rgba(0,0,0,0.03)}
+
+/* Navbar */
+.navbar .logo-img{width:42px;height:42px;border-radius:8px;object-fit:cover}
+.brand-title{font-weight:700;color:#0f172a}
+
+/* Hero */
+.hero{
+  background: linear-gradient(135deg,#0ea5e9 0%, #7c3aed 100%);
+  color:white;
+  padding:60px 0 40px;
+  border-bottom-left-radius:60px;
+  border-bottom-right-radius:60px;
+}
+.hero h1{font-size:2.25rem;line-height:1.05}
+.hero .lead{opacity:.95}
+.hero .btn-white{background:rgba(255,255,255,0.16); color:white; border:1px solid rgba(255,255,255,0.12)}
+.hero .btn-white:hover{background:rgba(255,255,255,0.22)}
+
+/* counters */
+.counter-card{
+  background: #fff; border-radius:10px; box-shadow:0 6px 18px rgba(2,6,23,0.08);
+}
+.counter-number{font-size:1.45rem;font-weight:700}
+.counter-label{font-size:0.8rem;color:#64748b;margin-top:4px}
+.counter-card.bg-gradient{background:linear-gradient(90deg,#06b6d4,#3b82f6); color:white}
+
+/* agent card */
+.agent-card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
+.agent-card .name{font-weight:700}
+.agent-meta{color:#6b7280;font-size:13px}
+.agent-actions .btn{border-radius:999px;padding:.45rem .8rem;font-size:13px}
+
+/* table in admin */
+.table thead th{border-top:0}
+.table tbody tr td{vertical-align:middle}
+
+/* small screens tweak */
+@media (max-width:767px){
+  .hero{padding:36px 0 24px;border-radius:0 0 24px 24px}
+  .hero h1{font-size:1.6rem}
+}
+
+
+/*============================
+Mobile / Tablet Media Queries
+=============================*/
+
+/* Small screens: <768px */
+@media (max-width: 767px) {
+  /* Navbar: make items stack */
+  .navbar .ms-auto {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Hero text smaller, buttons stacked */
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero .lead {
+    font-size: 0.95rem;
+  }
+  .hero .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  /* Counters: 2 per row */
+  .counters .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .counters .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Agent cards: full width */
+  #agentsContainer .col-md-6,
+  #agentsContainer .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Agent card actions stacked */
+  .agent-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  /* Search input full width */
+  #searchInput {
+    width: 100% !important;
+  }
+  #searchBtn {
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  /* Filter buttons: wrap */
+  .btn-group {
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  /* Footer text smaller */
+  footer {
+    font-size: 0.75rem;
+  }
+}
+
+/* Medium screens: 768px - 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .lead {
+    font-size: 1rem;
+  }
+
+  /* Counters: 2 per row */
+  .counters .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .counters .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Agent cards: 2 per row */
+  #agentsContainer .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Counter hover effect */
+.counter-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.counter-hover:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Counter icon color for white cards */
+.counter-card i {
+  color: #4A90E2;
+}
+
+/* Master card icon */
+.counter-card.bg-gradient i {
+  color: #fff;
+}
