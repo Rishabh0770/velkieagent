@@ -236,3 +236,23 @@ body, html {
 #maintable.container {
   margin-bottom: 40px; /* ya 0 */
 }
+
+/* Header row bottom corners */
+.table .header-row th:first-child {
+  border-bottom-left-radius: 13px; /* left bottom corner */
+}
+
+.table .header-row th:last-child {
+  border-bottom-right-radius: 13px; /* right bottom corner */
+}
+
+/* Table body first row top corners */
+.table tbody tr:first-child td:first-child {
+  border-top-left-radius: 13px; /* top left corner */
+}
+
+.table tbody tr:first-child td:last-child {
+  border-top-right-radius: 13px; /* top right corner */
+}
+
+
