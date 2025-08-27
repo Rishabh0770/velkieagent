@@ -117,7 +117,7 @@ body, html {
 
 
 .nav-center .nav-link {
-  font-size: 18px;
+  font-size: 28px;
   font-weight: bold;
   color: rgb(191, 191, 0);
   text-decoration: underline;
@@ -463,4 +463,23 @@ thead tr:first-child th {
     font-size: 14px;   /* Header text chhota */
     padding: 10px 0;
   }
+}
+.whatsapp-icon {
+  width: 24px;    /* size fix */
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* Agar Tailwind line-clamp plugin nahi laga to ye custom CSS use kar */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* show only 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

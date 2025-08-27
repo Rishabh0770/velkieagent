@@ -1,0 +1,11 @@
+.nav-center .nav-link {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(191, 191, 0);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.nav-center .nav-link:hover {
+  color: orange; /* hover pe halka effect */
+}

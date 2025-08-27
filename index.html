@@ -2,12 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Responsive Navbar Clone</title>
+   <link rel="stylesheet" href="https://agentallvelki.com/public/styles/tailwind/tailwind.min.css">
+    <link rel="stylesheet" href="https://agentallvelki.com/public/styles/css/style.css">
+    <script src="https://agentallvelki.com/public/styles/tailwind/tailwindcss3-4.js"></script>
+    <script src="https://agentallvelki.com/public/styles/tailwind/tailwind-config.js"></script>
+  <title>Velki Agent List - ভেলকি এজেন্ট লিস্ট Online Betting Site BD - agentallvelki.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
+
+   <meta property="og:title" content="Velki Agent List - ভেলকি এজেন্ট লিস্ট Online Betting Site BD" />
+<meta property="og:description" content="Explore the trusted Velki Agent List (ভেলকি এজেন্ট লিস্ট) for secure online betting. Join Velki, a reliable platform offering top-notch betting experiences and trusted agents!" />
+<meta property="og:image" content="https://agentallvelki.com/public/default-image.jpg" />
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://agentallvelki.com/public/favicon.ico">
+    <link href="https://fonts.cdnfonts.com/css/solaimanlipi" rel="stylesheet">
+ <meta name="google-site-verification" content="Ko_hBf1ZBLIN1VR09sKtkMdh4nfst1llwACsMnb21NY" />
+ <meta name="google-site-verification" content="fDHTIdyNCy5z8UCHXixUffvPdKqiYGwToOwYuF3gDN0"/>
+ <!-- Event snippet for Page view conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16686856186/5tIICLfGl_UZEPrv9JQ-',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 
   <style>
     body { margin:0; font-family: Arial, sans-serif; background:#fff; }
@@ -237,9 +271,12 @@
   <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
 
     <!-- Logo -->
-    <div class="logo">
-      <img src="logo1.0.png" alt="Logo">
-    </div>
+<div class="logo">
+  <a href="index.html">
+    <img src="logo1.0.png" alt="Logo">
+  </a>
+</div>
+
 
     <!-- Center Navbar Text -->
     <div class="nav-center">
@@ -268,16 +305,27 @@
   <!-- red line -->
   <div class="red-line"></div>
 
-  <!-- secondary nav -->
-  <div class="sub-nav">
+ <!-- secondary nav -->
+<div class="sub-nav">
   <div class="container">
-    <a href="#maintable" class="active" data-type="ALL"><i class="bi bi-house-door-fill"></i> Home</a>
-    <a href="#" data-type="ADMIN"><i class="bi bi-shield-lock-fill"></i> Admin</a>
-    <a href="#" data-type="SUB-ADMIN"><i class="bi bi-person-badge-fill"></i> Sub-Admin</a>
-    <a href="#" data-type="SUPER"><i class="bi bi-person-gear"></i> Super</a>
-    <a href="#" data-type="MASTER"><i class="bi bi-person-fill"></i> Master</a>
+    <a href="#home" id="link-home" class="active" data-type="ALL">
+      <i class="bi bi-house-door-fill"></i> Home
+    </a>
+    <a href="#admin" id="link-admin" data-type="ADMIN">
+      <i class="bi bi-shield-lock-fill"></i> Admin
+    </a>
+    <a href="#subadmin" id="link-subadmin" data-type="SUB-ADMIN">
+      <i class="bi bi-person-badge-fill"></i> Sub-Admin
+    </a>
+    <a href="#super" id="link-super" data-type="SUPER">
+      <i class="bi bi-person-gear"></i> Super
+    </a>
+    <a href="#master" id="link-master" data-type="MASTER">
+      <i class="bi bi-person-fill"></i> Master
+    </a>
   </div>
 </div>
+
 
 
   <!-- Hamburger Menu -->
@@ -289,6 +337,8 @@
   </div>
 
 
+  
+<!-- Full Agent Table -->
 <div id="maintable" class="container mt-4">
   <table class="table table-bordered" id="agentTable">
     <thead>
@@ -299,13 +349,13 @@
         </th>
       </tr>
       <!-- Notice row -->
-<tr>
-  <th colspan="6" class="notice-cell">
-    <div class="notice-text">
-      হোয়াটসঅ্যাপ ব্যতীত অন্য কোন app এর মাধ্যমে যোগাযোগ বা লেনদেন করা যাবে না এবং করলে তা গ্রহণযোগ্য হবে না
-    </div>
-  </th>
-</tr>
+      <tr>
+        <th colspan="6" class="notice-cell">
+          <div class="notice-text">
+            হোয়াটসঅ্যাপ ব্যতীত অন্য কোন app এর মাধ্যমে যোগাযোগ বা লেনদেন করা যাবে না এবং করলে তা গ্রহণযোগ্য হবে না
+          </div>
+        </th>
+      </tr>
       <!-- Header row -->
       <tr class="header-row">
         <th>Type</th>
@@ -317,59 +367,346 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>ADMIN</td><td>Zeeshan</td><td>01</td><td><a href="https://wa.me/639308682092" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682092">+639308682092</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Joshim</td><td>02</td><td><a href="https://wa.me/639308682093" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682093">+639308682093</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Rafiq</td><td>03</td><td><a href="https://wa.me/639308682094" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682094">+639308682094</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Farhan</td><td>04</td><td><a href="https://wa.me/639308682095" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682095">+639308682095</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>ADMIN</td><td>Imran</td><td>05</td><td><a href="https://wa.me/639308682096" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682096">+639308682096</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Arafat</td><td>06</td><td><a href="https://wa.me/639308682097" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682097">+639308682097</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Salman</td><td>07</td><td><a href="https://wa.me/639308682098" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682098">+639308682098</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Rashid</td><td>08</td><td><a href="https://wa.me/639308682099" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682099">+639308682099</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Shahid</td><td>09</td><td><a href="https://wa.me/639308682100" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682100">+639308682100</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>ADMIN</td><td>Tariq</td><td>10</td><td><a href="https://wa.me/639308682101" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682101">+639308682101</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Ali</td><td>11</td><td><a href="https://wa.me/639308682102" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682102">+639308682102</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUB-ADMIN</td><td>Hart</td><td>12</td><td><a href="https://wa.me/639308682103" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682103">+639308682103</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Hassan</td><td>13</td><td><a href="https://wa.me/639308682104" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682104">+639308682104</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Fahim</td><td>14</td><td><a href="https://wa.me/639308682105" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682105">+639308682105</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUB-ADMIN</td><td>Arif</td><td>15</td><td><a href="https://wa.me/639308682106" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682106">+639308682106</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Feroz</td><td>16</td><td><a href="https://wa.me/639308682107" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682107">+639308682107</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUB-ADMIN</td><td>Jamil</td><td>17</td><td><a href="https://wa.me/639308682108" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682108">+639308682108</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Bilal</td><td>18</td><td><a href="https://wa.me/639308682109" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682109">+639308682109</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUB-ADMIN</td><td>Omar</td><td>19</td><td><a href="https://wa.me/639308682110" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682110">+639308682110</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Usman</td><td>20</td><td><a href="https://wa.me/639308682111" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682111">+639308682111</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Shafique</td><td>21</td><td><a href="https://wa.me/639308682112" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682112">+639308682112</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Riyaz</td><td>22</td><td><a href="https://wa.me/639308682113" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682113">+639308682113</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Sami</td><td>23</td><td><a href="https://wa.me/639308682114" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682114">+639308682114</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Taimur</td><td>24</td><td><a href="https://wa.me/639308682115" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682115">+639308682115</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Waseem</td><td>25</td><td><a href="https://wa.me/639308682116" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682116">+639308682116</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Zubair</td><td>26</td><td><a href="https://wa.me/639308682117" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682117">+639308682117</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUB-ADMIN</td><td>Faiz</td><td>27</td><td><a href="https://wa.me/639308682118" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682118">+639308682118</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Hashim</td><td>28</td><td><a href="https://wa.me/639308682119" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682119">+639308682119</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Adnan</td><td>29</td><td><a href="https://wa.me/639308682120" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682120">+639308682120</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Rashad</td><td>30</td><td><a href="https://wa.me/639308682121" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682121">+639308682121</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Junaid</td><td>31</td><td><a href="https://wa.me/639308682122" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682122">+639308682122</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Shoaib</td><td>32</td><td><a href="https://wa.me/639308682123" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682123">+639308682123</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Faisal</td><td>33</td><td><a href="https://wa.me/639308682124" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682124">+639308682124</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Akram</td><td>34</td><td><a href="https://wa.me/639308682125" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682125">+639308682125</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Shahbaz</td><td>35</td><td><a href="https://wa.me/639308682126" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682126">+639308682126</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Nasir</td><td>36</td><td><a href="https://wa.me/639308682127" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682127">+639308682127</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Sajid</td><td>37</td><td><a href="https://wa.me/639308682128" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682128">+639308682128</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Imtiaz</td><td>38</td><td><a href="https://wa.me/639308682129" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682129">+639308682129</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Yasir</td><td>39</td><td><a href="https://wa.me/639308682130" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682130">+639308682130</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Zahir</td><td>40</td><td><a href="https://wa.me/639308682131" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682131">+639308682131</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Shabbir</td><td>41</td><td><a href="https://wa.me/639308682132" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682132">+639308682132</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Tahir</td><td>42</td><td><a href="https://wa.me/639308682133" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682133">+639308682133</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Azhar</td><td>43</td><td><a href="https://wa.me/639308682134" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682134">+639308682134</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>HOME</td><td>Imran</td><td>44</td><td><a href="https://wa.me/639308682135" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682135">+639308682135</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Fawad</td><td>45</td><td><a href="https://wa.me/639308682136" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682136">+639308682136</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Asim</td><td>46</td><td><a href="https://wa.me/639308682137" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682137">+639308682137</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Rizwan</td><td>47</td><td><a href="https://wa.me/639308682138" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682138">+639308682138</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>MASTER</td><td>Javed</td><td>48</td><td><a href="https://wa.me/639308682139" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682139">+639308682139</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>OFFICE</td><td>Nadeem</td><td>49</td><td><a href="https://wa.me/639308682140" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682140">+639308682140</a></td><td>অ্যাডমিন</td></tr>
-      <tr><td>SUPER</td><td>Sultan</td><td>50</td><td><a href="https://wa.me/639308682141" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682141">+639308682141</a></td><td>অ্যাডমিন</td></tr>
+      <!-- Example grouped sections -->
+      <tr id="admin"><td>ADMIN</td><td>ARMAN MALIK</td><td>01</td><td class="text-center"><a href="https://wa.me/639308682092" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682092">+639308682092</a></td><td>অ্যাডমিন</td></tr>
+
+      <tr id="master"><td>MASTER</td><td>Joshim</td><td>02</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+
+      <tr id="office"><td>OFFICE</td><td>Rafiq</td><td>03</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+
+      <tr id="home"><td>HOME</td><td>Arafat</td><td>06</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+
+      <tr id="subadmin"><td>SUB-MASTER</td><td>Hart</td><td>12</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+
+      <tr id="super"><td>SUPER</td><td>Bilal</td><td>18</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+
+      
+      
+      <!-- ...baaki rows as it is ... -->
     </tbody>
   </table>
 </div>
+
+
+<div class="middle-content">
+  <div class="w-full">
+    <div class="flex flex-col items-center justify-center mb-[3px]">
+      <h3 class="text-xl font-bold mb-[3px] text-center md:text-left">
+        Velki - Trusted Betting Site in Bangladesh ভেলকি এজেন্ট লিস্ট Velki Agent
+      </h3>
+
+      <!-- Text Section -->
+      <div
+        id="text"
+        class="text-gray-500 block mb-[6px] overflow-hidden max-h-[80px] transition-all duration-500 ease-in-out text-center md:text-left"
+      >
+        <h2 class="leading-relaxed">
+          Velki - Trusted Betting Site in Bangladesh ভেলকি এজেন্ট লিস্ট
+        </h2>
+        <p>
+          Velki operates as an agent-based betting platform in Bangladesh,
+          ensuring personalized service and security for its users. To join the
+          Velki community, the first step is to connect with a verified Velki
+          Agent. These agents are your gateway to opening an account and
+          enjoying the betting experience Velki offers.
+        </p>
+      </div>
+
+      <!-- Toggle Button -->
+      <button
+        id="toggleBtn"
+        class="text-blue-500 underline cursor-pointer"
+      >
+        Read More
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const text = document.getElementById("text");
+  const btn = document.getElementById("toggleBtn");
+
+  btn.addEventListener("click", () => {
+    if (text.classList.contains("max-h-[80px]")) {
+      text.classList.remove("max-h-[80px]");
+      text.classList.add("max-h-[1000px]");
+      btn.innerText = "Read Less";
+    } else {
+      text.classList.add("max-h-[80px]");
+      text.classList.remove("max-h-[1000px]");
+      btn.innerText = "Read More";
+    }
+  });
+</script>
+
+
+<div class="middle-content">
+  <div class="w-full">
+    <div class="flex flex-col items-center justify-center mb-[3px]">
+      <h3 class="text-xl font-bold mb-[3px] text-center">
+        Velki Live Agent List | ভেলকি একাউন্ট খুলুন, ভেলকি এজেন্ট লিস্ট
+      </h3>
+
+      <!-- Read More Section -->
+      <div class="read-more-section max-w-3xl text-center">
+        <div class="read-text text-gray-500 mb-[6px] line-clamp-2 text-justify">
+          <p>
+            <strong>Below is an in-depth guide...</strong><br><br>
+            <b>Step 1: Contacting a Verified Velki Agent</b><br>
+            Before you can begin betting on Velki, you need to connect with a verified agent...
+            ⚠ Important: If you choose to contact someone...
+            <br><br>
+            <b>Why Use Verified Agents?</b><br>
+            Velki’s verified agents are carefully vetted...
+            <br><br>
+            <b>Security Measures to Protect Your Account</b><br>
+            While our agents are there to help you...
+            <br><br>
+            <b>Change Your Password Regularly:</b><br>
+            If an agent has access to your password...
+            <br><br>
+            <b>Never Share Your Password:</b><br>
+            Under no circumstances should you share...
+            <br><br>
+            <b>Use Verified Communication Channels:</b><br>
+            Velki only facilitates communication...
+            <br><br>
+            <b>Risks of Using Unauthorized Agents</b><br>
+            Choosing to work with agents who are not...
+            <br><br>
+            <b>How to Spot a Verified Agent</b><br>
+            To ensure you’re working with a genuine...
+            <br><br>
+            <b>Enjoy a Seamless Betting Experience</b><br>
+            By following the steps above...
+          </p>
+        </div>
+
+        <!-- Button -->
+        <button class="read-more-btn text-blue-500 underline">Read More</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll(".read-more-section").forEach(section => {
+    const text = section.querySelector(".read-text");
+    const button = section.querySelector(".read-more-btn");
+
+    // Initially clamp text
+    text.classList.add("line-clamp-2");
+
+    button.addEventListener("click", () => {
+      text.classList.toggle("line-clamp-2");
+
+      if (text.classList.contains("line-clamp-2")) {
+        button.textContent = "Read More";
+      } else {
+        button.textContent = "Read Less";
+      }
+    });
+  });
+</script>
+
+
+
+
+        <div class="left-posts grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card1.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749235999_3e76f51d99b550cf3dd8.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">ভেলকি লাইভ ১২৩ | ভেলকি লাইভ একাউন্ট খুলুন - Velki </h2>
+                        <p class="text-gray-600 text-sm mt-2">ভেলকি লাইভ ১২৩ | ভেলকি লাইভ একাউন্ট খুলুন - Velki Live 123</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card2.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749236116_3194253830a5ef2fbe3c.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">Velki 365: Leading Betting Platform in Bangladesh</h2>
+                        <p class="text-gray-600 text-sm mt-2">Velki 365: A Leading Betting Platform in Bangladesh</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card3.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749236230_b99cd053e0d0f982e660.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">Velki Live 123 | ভেলকি লাইভ একাউন্ট খুলুন</h2>
+                        <p class="text-gray-600 text-sm mt-2">Velki Live 123 Bangladesh | ভেলকি লাইভ একাউন্ট খুলুন</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card4.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749236294_05ae7e337a4ef3e82900.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">How can I become an agent on Velki? কিভাবে আমি ভেল</h2>
+                        <p class="text-gray-600 text-sm mt-2">How can I become an agent on Velki? কিভাবে আমি ভেল্কি তে এজেন্ট হতে পারি?</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card5.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749236474_44c9bbf52fc1aa890c93.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">Trusted Velki Agent List and Verified Agents ভেলকি</h2>
+                        <p class="text-gray-600 text-sm mt-2">Trusted Velki Agent List and Verified Agents ভেলকি এজেন্ট </p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card6.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749412870_83b68089b095f1363cd5.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">How to Register and Log In to Velki</h2>
+                        <p class="text-gray-600 text-sm mt-2">How to Register and Log In to Velki কীভাবে নিবন্ধন এবং ভেল্কিতে লগ ইন করবেন</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card7.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749412843_61baf41d37388319e560.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">How to withdraw money from a Velki? ভেলকি থেকে টাক</h2>
+                        <p class="text-gray-600 text-sm mt-2">How to withdraw money from a Velki? ভেলকি থেকে টাকা তোলার নিয়ম</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card8.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749412749_3e06cc5bc63840f2120c.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">How to open a Velki account</h2>
+                        <p class="text-gray-600 text-sm mt-2">How to open a Velki account  কিভাবে ভেলকি অ্যাকাউন্ট খুলবেন?</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                            <a class="posts bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300" href="./cards/card9.html">
+                    <div class="post-top">
+                        <img class="w-full h-48 object-cover" src="https://agentallvelki.com/public/uploads/1749412689_9410f97009c9bbf4ef7d.jpg" alt="">
+                    </div>
+                    <div class="post-down p-4">
+                        <h2 class="text-xl font-bold text-gray-800">Agent</h2>
+                        <p class="text-gray-600 text-sm mt-2">এজেন্ট কত প্রকারঃ</p>
+                        <p class="text-blue-500 mt-4 font-medium">Read More</p>
+                    </div>
+                </a>
+                    </div>
+
+
+    </div>
+
+</div>
+
+<div class="faq">
+    <h1>Velki FAQ <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path d="M13.2328 16.4569C12.9328 16.7426 12.9212 17.2173 13.2069 17.5172C13.4926 17.8172 13.9673 17.8288 14.2672 17.5431L13.2328 16.4569ZM19.5172 12.5431C19.8172 12.2574 19.8288 11.7827 19.5431 11.4828C19.2574 11.1828 18.7827 11.1712 18.4828 11.4569L19.5172 12.5431ZM18.4828 12.5431C18.7827 12.8288 19.2574 12.8172 19.5431 12.5172C19.8288 12.2173 19.8172 11.7426 19.5172 11.4569L18.4828 12.5431ZM14.2672 6.4569C13.9673 6.17123 13.4926 6.18281 13.2069 6.48276C12.9212 6.78271 12.9328 7.25744 13.2328 7.5431L14.2672 6.4569ZM19 12.75C19.4142 12.75 19.75 12.4142 19.75 12C19.75 11.5858 19.4142 11.25 19 11.25V12.75ZM5 11.25C4.58579 11.25 4.25 11.5858 4.25 12C4.25 12.4142 4.58579 12.75 5 12.75V11.25ZM14.2672 17.5431L19.5172 12.5431L18.4828 11.4569L13.2328 16.4569L14.2672 17.5431ZM19.5172 11.4569L14.2672 6.4569L13.2328 7.5431L18.4828 12.5431L19.5172 11.4569ZM19 11.25L5 11.25V12.75L19 12.75V11.25Z" fill="#000000"></path>
+            </g>
+        </svg></h1>
+    <div class="faq-list">
+                    <a class="" href="./FAQ/faq.html">
+                <div>
+                    <img src="https://agentallvelki.com/public/uploads/1735320205_f68aaee8297be1e1a3f6.jpg" alt="">
+                </div>
+                <div>
+                    <p>Velki Faq</p>
+                    <h1>ভেল্কি তে কিভাবে লেনদেন করবেন?</h1>
+                </div>
+            </a>
+                    <a class="" href="./FAQ/faq2.html">
+                <div>
+                    <img src="https://agentallvelki.com/public/uploads/1735320339_ba095124fcf399dfd7dc.jpg" alt="">
+                </div>
+                <div>
+                    <p>Velki Faq</p>
+                    <h1>কিভাবে একাউন্ট খুলবেন?</h1>
+                </div>
+            </a>
+                    <a class="" href="./FAQ/faq3.html">
+                <div>
+                    <img src="https://agentallvelki.com/public/uploads/1735320424_b5c7b4f1d43e54c4a424.jpg" alt="">
+                </div>
+                <div>
+                    <p>Velki Faq</p>
+                    <h1>একাউন্ট খোলার নিয়ম বা শর্ত গুলো কি কি?</h1>
+                </div>
+            </a>
+                    <a class="" href="./FAQ/faq4.html">
+                <div>
+                    <img src="https://agentallvelki.com/public/uploads/1735320249_68ff616ae059b966e9ff.jpg" alt="">
+                </div>
+                <div>
+                    <p>Velki Faq</p>
+                    <h1>ভেল্কির ফেইসবুক গ্রুপ লিঙ্ক কোন টা?</h1>
+                </div>
+            </a>
+                    <a class="" href="./FAQ/faq5.html">
+                <div>
+                    <img src="https://agentallvelki.com/public/uploads/1735320447_3b42fa567824b69cfb41.jpg" alt="">
+                </div>
+                <div>
+                    <p>Velki Faq</p>
+                    <h1>কিভাবে আমি ভেল্কি তে এজেন্ট হতে পারি?</h1>
+                </div>
+            </a>
+                    <a class="" href="./FAQ/faq6.html">
+                <div>
+                    <img src="https://agentallvelki.com/public/uploads/1735320462_239daa298ff444cd0087.jpg" alt="">
+                </div>
+                <div>
+                    <p>Velki Faq</p>
+                    <h1>কিভাবে আমি ভেল্কি তে অনলাইন মাষ্টার এজেন্ট হতে পারি?</h1>
+                </div>
+            </a>
+                    <a class="" href="./FAQ/faq7.html">
+                <div>
+                    <img src="https://agentallvelki.com/public/uploads/1735471974_aba308f4989bde55eb50.jpg" alt="">
+                </div>
+                <div>
+                    <p>Velki Faq</p>
+                    <h1>এজেন্ট এর বিরুদ্ধে কিভাবে অভিযোগ করবেন?</h1>
+                </div>
+            </a>
+            </div>
+</div>
+
+
+
+
+
+</div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const rows = document.querySelectorAll("tr"); // সব TR নেওয়া
+
+    rows.forEach((row, index) => {
+        if (index % 2 === 0) {
+            row.style.backgroundColor = "#FFF6F3";
+        } else {
+            row.style.backgroundColor = "#EFF0F3";
+        }
+    });
+});
+
+</script>
+
 
 
 <!-- Footer -->
@@ -412,6 +749,7 @@
     <!-- Bottom -->
     <div class="footer-bottom">
       <p>&copy; 2025 Velki Agent List. All rights reserved.</p>
+      <p>Powered by ARMAN MALIK</p>
     </div>
   </div>
 </footer>
