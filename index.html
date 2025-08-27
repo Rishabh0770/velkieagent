@@ -295,6 +295,15 @@ function gtag_report_conversion(url) {
     font-weight: 500;  /* thoda bold for readability */
   }
 }
+@media (max-width: 768px) {
+  .agent-form-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -354,7 +363,7 @@ function gtag_report_conversion(url) {
     <a href="#" data-type="SUPER"><i class="bi bi-person-gear"></i> Super</a>
     <a href="#" data-type="MASTER"><i class="bi bi-person-fill"></i> Master</a>
   </div>
-</div>
+</div>  
 
 
 
@@ -367,7 +376,96 @@ function gtag_report_conversion(url) {
   </div>
 
 
-  
+
+<!-- Agent Search Section (VISIBLE by default) -->
+<div id="agentSearchSection">
+  <h2 class="text-xl font-semibold text-center text-gray-800 mb-4 mt-5">
+      এজেন্ট এর আইডি নাম্বার দিয়ে খুজুন:
+  </h2>
+
+  <div class="flex items-center justify-center m-5 md:m-0 agent-form-wrapper">
+    <div class="w-full max-w-sm p-6 bg-white rounded-lg drop-shadow-lg">
+
+      <form id="agentForm">
+        <div class="mb-4">
+          <label class="block font-bold text-gray-700 text-sm mb-2" for="agentType">
+            Agent Type:
+          </label>
+          <select id="agentType" name="agentType" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="ma">মাষ্টার এজেন্ট</option>
+            <option value="sa">সুপার এজেন্ট</option>
+            <option value="sad">সাব এডমিন</option>
+          </select>
+        </div>
+
+        <div class="mb-4">
+          <label class="block font-bold text-gray-700 text-sm mb-2" for="agentId">
+            Agent ID:
+          </label>
+          <input type="text" id="agentId" name="agentId" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Agent ID">
+        </div>
+
+        <div>
+          <button type="submit" class=" bg-green-500 text-white font-semibold py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 w-full">
+            Submit
+          </button>
+        </div>
+      </form>
+
+      <!-- Result -->
+      <div id="agentResult" class="mt-4 text-center font-medium text-gray-700"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Sample agent data (static)
+  const agents = [
+    { type: "ma", id: "01", name: "Joshim", phone: "+639301111111" },
+    { type: "sa", id: "02", name: "Rafiq", phone: "+639302222222" },
+    { type: "sad", id: "03", name: "Hart", phone: "+639303333333" }
+  ];
+
+  // Nav links click handler
+  document.querySelectorAll(".sub-nav a").forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const type = this.getAttribute("data-type");
+      const section = document.getElementById("agentSearchSection");
+
+      if(type === "ADMIN") {
+        section.style.display = "none";  // hide for Admin
+      } else {
+        section.style.display = "block"; // show for all others
+      }
+    });
+  });
+
+  // Search function
+  document.getElementById("agentForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let type = document.getElementById("agentType").value;
+    let id = document.getElementById("agentId").value.trim();
+    let resultBox = document.getElementById("agentResult");
+
+    let agent = agents.find(a => a.type === type && a.id === id);
+
+    if(agent) {
+      resultBox.innerHTML = `
+        ✅ Agent Found <br>
+        <strong>Name:</strong> ${agent.name}<br>
+        <strong>Phone:</strong> ${agent.phone}
+      `;
+      resultBox.style.color = "green";
+    } else {
+      resultBox.innerHTML = "❌ Agent not found!";
+      resultBox.style.color = "red";
+    }
+  });
+</script>
+
 <!-- Full Agent Table -->
 <div id="maintable" class="container mt-4">
   <table class="table table-bordered" id="agentTable">
