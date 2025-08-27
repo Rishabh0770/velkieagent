@@ -131,7 +131,7 @@ body, html {
 
 
 .site-footer {
-  background: #2c2c2c; /* slightly lighter than #222 */
+  background: #d63a3a; /* slightly lighter than #222 */
   color: #fff;
   padding: 40px 0 20px;
   font-family: Arial, sans-serif;
@@ -176,7 +176,7 @@ body, html {
 .footer-contact h4 {
   margin-bottom: 10px;
   font-size: 18px;
-  color: #d63a3a;
+  color: #b44747;
 }
 
 .footer-links a {
@@ -199,9 +199,9 @@ body, html {
   font-size: 20px;
 }
 
-.footer-bottom {
+.footer-bottom { 
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #aaa;
 }
 /* ✅ Mobile Responsive Footer */
@@ -482,4 +482,83 @@ thead tr:first-child th {
   -webkit-line-clamp: 2; /* show only 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+/* Footer Base */
+.site-footer {
+  background-color: #f9f9f9;   /* halka white/grey */
+  color: #333;                 /* text color dark grey */
+  padding: 40px 0;
+  border-top: 1px solid #e5e5e5; /* subtle line upar */
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Footer Top Layout */
+.site-footer .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Footer Logo */
+.footer-logo img {
+  max-width: 140px;
+  margin-bottom: 15px;
+}
+
+/* Footer Headings */
+.site-footer h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #000; /* black heading */
+}
+
+/* Footer Links */
+.footer-links a {
+  display: block;
+  color: #555;   /* normal */
+  text-decoration: none;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #000;   /* hover pe dark */
+  padding-left: 4px; /* thoda slide effect */
+}
+
+/* Contact Info Links */
+.footer-contact a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #000;
+}
+
+/* Social Icons */
+.footer-social a {
+  color: #555;
+  font-size: 20px;
+  margin-right: 12px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #000;
+  transform: scale(1.15); /* halka zoom */
+}
+
+/* Footer Bottom (optional) */
+.site-footer .footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
 }

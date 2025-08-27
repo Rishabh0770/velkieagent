@@ -277,7 +277,24 @@ function gtag_report_conversion(url) {
   color: #007BFF;           /* hover color, different shade of blue */
   text-decoration: underline; /* underline appears on hover */
 }
+@media (max-width: 768px) {
+  #maintable {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
+/* Mobile view font bigger */
+@media (max-width: 768px) {
+  #maintable tbody td {
+    font-size: 12px;   /* thoda bada */
+    font-weight: 500;  /* thoda bold for readability */
+  }
+}
   </style>
 </head>
 <body>
@@ -369,26 +386,18 @@ function gtag_report_conversion(url) {
           </div>
         </th>
       </tr>
-      <!-- Header row -->
-      <tr class="header-row">
-        <th>Type</th>
-        <th>Name</th>
-        <th>ID No</th>
-        <th>Whatsapp</th>
-        <th>Ph No.</th>
-        <th>Admin</th>
-      </tr>
+
     </thead>
     <!-- Table -->
 <table>
   <thead>
-    <tr>
+    <tr class="header-row">
       <th>Role</th>
       <th>Name</th>
       <th>ID</th>
       <th>WhatsApp</th>
       <th>Phone</th>
-      <th>Language</th>
+      <th>Admin</th>
     </tr>
   </thead>
   <tbody>
@@ -825,7 +834,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Quick Links -->
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h4 style="color: #000000;">Quick Links</h4>
         <a href="#maintable">Home</a>
         <a href="#">Admin</a>
         <a href="#">Sub-Admin</a>
@@ -835,7 +844,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       <!-- Contact Info -->
       <div class="footer-contact">
-        <h4>Contact Us</h4>
+        <h4 style="color: #000000;">Contact Us</h4>
         <p>WhatsApp: <a href="https://wa.me/639308682092" target="_blank">+63 930 868 2092</a></p>
         <p>Phone: <a href="tel:+639308682092">+63 930 868 2092</a></p>
         <p>Email: <a href="mailto:info@velkiagentlist.com">info@velkiagentlist.com</a></p>
@@ -851,7 +860,7 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <!-- Bottom -->
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="color: #000000;">
       <p>&copy; 2025 Velki Agent List. All rights reserved.</p>
       <p>Powered by ARMAN MALIK</p>
     </div>
