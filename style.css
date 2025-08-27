@@ -562,3 +562,36 @@ thead tr:first-child th {
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
+
+
+body {
+  background: linear-gradient(to right, #8ab92d, #5defcf);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.btn-primary {
+  background-color: #8ab92d;
+  border-color: #8ab92d;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #5defcf;
+  border-color: #5defcf;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(138, 185, 45, 0.25);
+}
+
+a {
+  color: #5defcf;
+}
+
+a:hover {
+  color: #ffffff;
+}
