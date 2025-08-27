@@ -253,8 +253,31 @@ function gtag_report_conversion(url) {
     display: none; /* icons hide */
   }
 }
+.read-text strong {
+  color: #000000; /* Dark black */
+}
 
-   
+   .whatsapp-icon {
+  width: 20px;        /* adjust size as needed */
+  height: 20px;
+  object-fit: contain; /* keeps the icon proportional */
+  transition: transform 0.3s; /* optional: for hover effect */
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.2); /* optional: small zoom on hover */
+}
+.whatsapp-link a {
+  color: #1DA851;           /* default greenish-blue color */
+  text-decoration: none;     /* no underline by default */
+  transition: all 0.3s;
+}
+
+.whatsapp-link a:hover {
+  color: #007BFF;           /* hover color, different shade of blue */
+  text-decoration: underline; /* underline appears on hover */
+}
+
   </style>
 </head>
 <body>
@@ -305,24 +328,14 @@ function gtag_report_conversion(url) {
   <!-- red line -->
   <div class="red-line"></div>
 
- <!-- secondary nav -->
+<!-- Secondary Nav -->
 <div class="sub-nav">
   <div class="container">
-    <a href="#home" id="link-home" class="active" data-type="ALL">
-      <i class="bi bi-house-door-fill"></i> Home
-    </a>
-    <a href="#admin" id="link-admin" data-type="ADMIN">
-      <i class="bi bi-shield-lock-fill"></i> Admin
-    </a>
-    <a href="#subadmin" id="link-subadmin" data-type="SUB-ADMIN">
-      <i class="bi bi-person-badge-fill"></i> Sub-Admin
-    </a>
-    <a href="#super" id="link-super" data-type="SUPER">
-      <i class="bi bi-person-gear"></i> Super
-    </a>
-    <a href="#master" id="link-master" data-type="MASTER">
-      <i class="bi bi-person-fill"></i> Master
-    </a>
+    <a href="#" data-type="ALL" class="active"><i class="bi bi-house-door-fill"></i> Home</a>
+    <a href="#" data-type="ADMIN"><i class="bi bi-shield-lock-fill"></i> Admin</a>
+    <a href="#" data-type="SUB-ADMIN"><i class="bi bi-person-badge-fill"></i> Sub-Admin</a>
+    <a href="#" data-type="SUPER"><i class="bi bi-person-gear"></i> Super</a>
+    <a href="#" data-type="MASTER"><i class="bi bi-person-fill"></i> Master</a>
   </div>
 </div>
 
@@ -366,26 +379,101 @@ function gtag_report_conversion(url) {
         <th>Admin</th>
       </tr>
     </thead>
-    <tbody>
-      <!-- Example grouped sections -->
-      <tr id="admin"><td>ADMIN</td><td>ARMAN MALIK</td><td>01</td><td class="text-center"><a href="https://wa.me/639308682092" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a></td><td><a href="tel:+639308682092">+639308682092</a></td><td>অ্যাডমিন</td></tr>
-
-      <tr id="master"><td>MASTER</td><td>Joshim</td><td>02</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
-
-      <tr id="office"><td>OFFICE</td><td>Rafiq</td><td>03</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
-
-      <tr id="home"><td>HOME</td><td>Arafat</td><td>06</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
-
-      <tr id="subadmin"><td>SUB-MASTER</td><td>Hart</td><td>12</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
-
-      <tr id="super"><td>SUPER</td><td>Bilal</td><td>18</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
-
-      
-      
-      <!-- ...baaki rows as it is ... -->
-    </tbody>
+    <!-- Table -->
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Name</th>
+      <th>ID</th>
+      <th>WhatsApp</th>
+      <th>Phone</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr data-type="ADMIN">
+  <td>ADMIN</td>
+  <td>Arman Malik</td>
+  <td>01</td>
+  <td class="text-center">
+    <a href="https://wa.me/639308682092" target="_blank">
+      <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+  </td>
+<td class="whatsapp-link">
+  <a href="https://wa.me/639308682092" target="_blank">+639308682092</a>
+</td>
+  <td>অ্যাডমিন</td>
+</tr>
+    <tr data-type="MASTER"><td>MASTER</td><td>Joshim</td><td>02</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+    <tr data-type="OFFICE"><td>OFFICE</td><td>Rafiq</td><td>03</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+    <tr data-type="HOME"><td>HOME</td><td>Arafat</td><td>06</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+    <tr data-type="SUB-ADMIN"><td>SUB-Admin</td><td>Hart</td><td>12</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+    <tr data-type="SUPER"><td>SUPER</td><td>Bilal</td><td>18</td><td>...</td><td>...</td><td>অ্যাডমিন</td></tr>
+  </tbody>
+</table>
   </table>
 </div>
+
+
+<script>
+const links = document.querySelectorAll('.sub-nav a');
+const tableBody = document.querySelector('table tbody');
+const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+// Function to shuffle an array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function filterRows(type) {
+  // Separate Admin row
+  const adminRow = rows.find(row => row.getAttribute('data-type') === 'ADMIN');
+
+  // Filter other rows
+  let otherRows;
+  if (type === 'ALL') {
+    otherRows = rows.filter(row => row.getAttribute('data-type') !== 'ADMIN');
+  } else {
+    otherRows = rows.filter(row => row.getAttribute('data-type') === type && row.getAttribute('data-type') !== 'ADMIN');
+  }
+
+  // Shuffle the other rows
+  otherRows = shuffleArray(otherRows);
+
+  // Clear tbody and append rows: Admin on top + shuffled rows
+  tableBody.innerHTML = '';
+  if(adminRow) tableBody.appendChild(adminRow);
+  otherRows.forEach(row => tableBody.appendChild(row));
+
+  // Update active link
+  links.forEach(l => l.classList.remove('active'));
+  const activeLink = document.querySelector(`.sub-nav a[data-type="${type}"]`);
+  if(activeLink) activeLink.classList.add('active');
+}
+
+// Click on nav links
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const type = link.getAttribute('data-type');
+    filterRows(type);
+    history.pushState(null, null, '#' + type);
+  });
+});
+
+// On page load
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = location.hash.replace('#', '') || 'ALL';
+  filterRows(hash);
+});
+</script>
+
 
 
 <div class="middle-content">
@@ -452,35 +540,50 @@ function gtag_report_conversion(url) {
       <div class="read-more-section max-w-3xl text-center">
         <div class="read-text text-gray-500 mb-[6px] line-clamp-2 text-justify">
           <p>
-            <strong>Below is an in-depth guide...</strong><br><br>
-            <b>Step 1: Contacting a Verified Velki Agent</b><br>
-            Before you can begin betting on Velki, you need to connect with a verified agent...
-            ⚠ Important: If you choose to contact someone...
-            <br><br>
-            <b>Why Use Verified Agents?</b><br>
-            Velki’s verified agents are carefully vetted...
-            <br><br>
-            <b>Security Measures to Protect Your Account</b><br>
-            While our agents are there to help you...
-            <br><br>
-            <b>Change Your Password Regularly:</b><br>
-            If an agent has access to your password...
-            <br><br>
-            <b>Never Share Your Password:</b><br>
-            Under no circumstances should you share...
-            <br><br>
-            <b>Use Verified Communication Channels:</b><br>
-            Velki only facilitates communication...
-            <br><br>
-            <b>Risks of Using Unauthorized Agents</b><br>
-            Choosing to work with agents who are not...
-            <br><br>
-            <b>How to Spot a Verified Agent</b><br>
-            To ensure you’re working with a genuine...
-            <br><br>
-            <b>Enjoy a Seamless Betting Experience</b><br>
-            By following the steps above...
+            <strong>Below is an in-depth guide to help you understand the process and ensure a safe and secure experience.</strong>
+          </p> <br>
+          <p>
+            <strong>Step 1: Contacting a Verified Velki Agent</strong><br>
+            Before you can begin betting on Velki, you must first establish communication with a Velki Agent. These agents are responsible for collecting the necessary details required to set up your account. To find a trustworthy agent, visit our official website, where you’ll find an extensive list of verified agents.
+          </p> <br>
+          <p>
+            ⚠ <strong>Important:</strong> If you choose to contact someone outside the verified agent list, you do so at your own risk. Velki cannot and will not be held responsible for any fraudulent activities or scams that occur outside the scope of our verified agents.
+          </p> <br>
+          <p>
+            <strong>Why Use Verified Agents?</strong><br>
+            Velki’s verified agents are carefully vetted to ensure they meet our standards of reliability, security, and professionalism. They adhere to strict guidelines to protect your personal information and provide seamless account setup assistance. When you work with a verified agent, you can trust that your account is in safe hands.
           </p>
+          <p> <br>
+            <strong>Security Measures to Protect Your Account</strong><br>
+            While our agents are there to help you, maintaining account security is ultimately your responsibility. Follow these essential tips to keep your account secure:
+          </p> <br>
+          <p>
+            <strong>Change Your Password Regularly:</strong><br>
+            If an agent has access to your password during account setup, ensure you change it immediately afterward. This simple step safeguards your account from unauthorized access.
+          </p> <br>
+          <p> 
+            <strong>Never Share Your Password:</strong><br>
+            Under no circumstances should you share your password with anyone, including your agent or other Velki users. Sharing your password compromises the security of your account.
+          </p> <br>
+          <p>
+            <strong>Use Verified Communication Channels:</strong><br>
+            Velki only facilitates communication and transactions through WhatsApp. Ensure all interactions with your agent occur via this platform to prevent scams or impersonation.
+          </p> <br>
+          <p>
+            <strong>Risks of Using Unauthorized Agents</strong><br>
+            Choosing to work with agents who are not on our verified list exposes you to unnecessary risks. These agents may not have been subjected to our rigorous verification process, increasing the likelihood of fraud. If you are scammed by an unverified agent, Velki cannot intervene or provide assistance.
+          </p> <br>
+          <p>
+            <strong>How to Spot a Verified Agent</strong><br>
+            To ensure you’re working with a genuine Velki Agent, always refer to the agent list available on our official website. Verified agents will have specific credentials and identification linked to Velki, making it easy to validate their authenticity.
+          </p> <br>
+          <p>
+            <strong>Enjoy a Seamless Betting Experience</strong><br>
+            By following the steps above and adhering to our security guidelines, you can enjoy the best that Velki has to offer. Our platform is designed to provide an unparalleled betting experience, and our agents are here to support you every step of the way.
+          </p> <br>
+          <p>
+            For more information, visit our website or connect with our support team through WhatsApp. Remember, your safety and satisfaction are our top priorities. Choose wisely, stay secure, and enjoy your journey with Velki!
+          </p> <br>
         </div>
 
         <!-- Button -->
@@ -489,6 +592,7 @@ function gtag_report_conversion(url) {
     </div>
   </div>
 </div>
+
 
 <script>
   document.querySelectorAll(".read-more-section").forEach(section => {
