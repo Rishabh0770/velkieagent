@@ -44,7 +44,7 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
-<style>
+  <style>
     body { margin:0; font-family: Arial, sans-serif; background:#fff; }
 
     /* container for margins */
@@ -112,39 +112,6 @@ function gtag_report_conversion(url) {
   text-align: left;
 }
 
-/* Hamburger */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 15px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  width: 180px;
-  z-index: 1000;
-}
-
-.hamburger-menu a {
-  display: block;
-  padding: 10px 15px;
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.hamburger-menu a:hover {
-  background: #f5f5f5;
-}
-
 /* Responsive for Mobile */
 @media (max-width: 768px) {
   .main-nav {
@@ -160,9 +127,6 @@ function gtag_report_conversion(url) {
     padding: 4px 8px;
   }
 
-  .hamburger {
-    display: block;
-  }
 
   /* Center text hide on mobile if needed */
   .nav-center {
@@ -282,31 +246,29 @@ function gtag_report_conversion(url) {
 </style>
 
 
-
- 
-
-  <header class="fixed top-0 left-0 w-full z-50 bg-white shadow md:relative mobile-sticky">
-     <!-- top nav -->
+<!-- top nav -->
   <div class="top-nav">
-    <div class="container">
+  <div class="container">
+    <a href="../nav/customer.html" style="color: inherit; text-decoration: none;">
       কাস্টমার সার্ভিস
-    </div>
+    </a>
   </div>
+</div>
 
-  <!-- main navbar -->
+<!-- main navbar -->
 <div class="main-nav">
   <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
 
     <!-- Logo -->
-<div class="logo">
-  <a href="../index.html">
-    <img src="../logo1.0.png" alt="Logo">
-  </a>
-</div>
+    <div class="logo">
+      <a href="../index.php">
+        <img src="../logo1.0.png" alt="Logo">
+      </a>
+    </div>
 
     <!-- Center Navbar Text -->
     <div class="nav-center">
-      <a href="#" class="nav-link">www.vekliagentlist.com</a>
+      <a href="https://velkiagentslistbd.com" class="nav-link">www.vekliagentlist.com</a>
     </div>
 
     <!-- Right Side (Date + Hamburger) -->
@@ -320,52 +282,63 @@ function gtag_report_conversion(url) {
       </div>
 
       <!-- Hamburger Icon -->
-      <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" id="hamburgerBtn">
         <i class="bi bi-list"></i>
       </div>
     </div>
   </div>
 </div>
 
+<!-- red line -->
+<div class="red-line"></div>
 
-  <!-- red line -->
-  <div class="red-line"></div>
-
-  <!-- secondary nav -->
+<!-- secondary nav -->
   <div class="sub-nav">
   <div class="container">
-<a href="../index.html#ALL" class="active" data-type="ALL">
+<a href="../index.php#ALL" class="active" data-type="ALL">
   <i class="bi bi-house-door-fill"></i> Home
 </a>
-<a href="../index.html#ADMIN" data-type="ADMIN">
+<a href="../index.php#ADMIN" data-type="ADMIN">
   <i class="bi bi-shield-lock-fill"></i> Admin
 </a>
-<a href="../index.html#SUB-ADMIN" data-type="SUB-ADMIN">
+<a href="../index.php#SUB-ADMIN" data-type="SUB-ADMIN">
   <i class="bi bi-person-badge-fill"></i> Sub-Admin
 </a>
-<a href="../index.html#SUPER" data-type="SUPER">
+<a href="../index.php#SUPER" data-type="SUPER">
   <i class="bi bi-person-gear"></i> Super
 </a>
-<a href="../index.html#MASTER" data-type="MASTER">
+<a href="../index.php#MASTER" data-type="MASTER">
   <i class="bi bi-person-fill"></i> Master
 </a>
   </div>
 </div>
 
 
-  <!-- Hamburger Menu -->
-  <div class="hamburger-menu" id="menu">
-    <a href="#"><i class="bi bi-person-circle"></i> Profile</a>
-    <a href="#"><i class="bi bi-gear-fill"></i> Settings</a>
-    <a href="#"><i class="bi bi-question-circle"></i> Help</a>
-    <a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a>
+
+<!-- Hamburger Menu -->
+<div class="hamburger-menu" id="menu">
+  <!-- Heading -->
+  <div class="menu-heading">
+    MENU
+    <span id="closeBtn" style="float:right; cursor:pointer;">✖</span>
   </div>
 
+  <!-- FAQ Heading -->
+    <p><i class="bi bi-question-circle"></i> Frequently Asked Questions</p>
+    <a href="../cards/card8.html"><i class="bi bi-pencil-square"></i> How to Create an Account?</a> 
+    <a href="../cards/card4.html"><i class="bi bi-person-plus"></i> How To Become a Velki Agent</a>
+    <br>
+    <p><i class="bi bi-people-fill"></i> Agent List</p>
+  <a href="../nav/admin.html"><i class="bi bi-shield-lock-fill"></i> Site Admin</a>
+  <a href="../nav/subadmin.html"><i class="bi bi-person-badge-fill"></i> Sub Admin</a>
+  <a href="../nav/super.html"><i class="bi bi-star-fill"></i> Super Agent</a>
+  <a href="#"><i class="bi bi-award-fill"></i> Master Agent</a>
+  <a href="../nav/customer.html"><i class="bi bi-headset"></i> Customer Service</a>
+  <a href="https://velki123.com/#/home"><i class="bi bi-link-45deg"></i> Link</a>
+</div>
 
-</header>
-
-</style>
-  
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
   
     
 <!-- start middle content -->
@@ -389,7 +362,7 @@ function gtag_report_conversion(url) {
 <!-- end middle content -->
 <footer class="py-4 justify-center text-center">
     <span class="text-white block">Copyright @ Velki Agent List | Powered By <br>
-        <a href="https://wa.me/+17737898422"><span class="font-bold">ARMAN MALIK</span></a>
+        <a href="#"><span class="font-bold">ARMAN MALIK</span></a>
     </span>
 </footer>
 
@@ -466,6 +439,70 @@ function gtag_report_conversion(url) {
         }
     });
 </script>
+
+<script>
+const hamburger = document.getElementById("hamburgerBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+
+// 🔹 Open menu
+function openMenu() {
+  menu.classList.add("active");
+  overlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+// 🔹 Close menu
+function closeMenu() {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+// Toggle hamburger
+hamburger.addEventListener("click", () => {
+  if (menu.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+// ✅ Overlay click → menu close
+overlay.addEventListener("click", () => {
+  closeMenu();
+});
+
+// ❌ button close
+closeBtn.addEventListener("click", closeMenu);
+</script>
+
+<script>
+    // auto update date
+    const date = new Date();
+    const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    document.getElementById("dayNum").innerText = date.getDate();
+    document.getElementById("dayName").innerText = days[date.getDay()];
+    document.getElementById("monthName").innerText = months[date.getMonth()];
+
+    // toggle hamburger menu
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // close menu on click outside
+    document.addEventListener("click", function(e) {
+      const menu = document.getElementById("menu");
+      const burger = document.querySelector(".hamburger");
+      if (!menu.contains(e.target) && !burger.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
 </body>
 
 </html>

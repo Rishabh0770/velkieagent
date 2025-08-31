@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+body {
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card { border-radius: 15px; }
+.btn-primary { 
+  background-color: #25D366;   /* WhatsApp green */
+  border-color: #25D366; 
+  transition: 0.3s;
+  color: #fff;
+}
+
+.btn-primary:hover { 
+  background-color: #1DA851;  /* Darker green for hover */
+  border-color: #1DA851;
+  color: #fff;
+}
+
+input:focus { box-shadow: 0 0 0 0.25rem rgba(138, 185, 45, 0.25); }
+</style>
+  <style>
+   
+
+    /* container for margins */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* top nav strip */
+    .top-nav {
+      background: #f9f9f9;
+      padding: 5px 0;
+      font-size: 14px;
+      color: #b00000;
+      font-weight: bold;
+    }
+    .top-nav .container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+/* Main Navbar */
+.main-nav {
+  width: 100%; /* full width */
+  box-sizing: border-box; /* padding include ho width me */
+  padding: 12px 15px;
+}
+
+.main-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* container bhi full width */
+  margin: 0 auto;
+  flex-wrap: nowrap; /* mobile me wrap na ho */
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Date Box */
+.date-box {
+  border: 2px solid #25D366;
+  border-radius: 30px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.date-num {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.date-text {
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  width: 180px;
+  z-index: 1000;
+}
+
+.hamburger-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hamburger-menu a:hover {
+  background: #f5f5f5;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 10px 12px; /* thoda kam padding mobile me */
+  }
+
+  .main-nav .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .date-box {
+    padding: 4px 8px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Center text hide on mobile if needed */
+  .nav-center {
+    display: none;
+  }
+}
+
+
+    /* red line */
+    .red-line {
+      border-top: 2px solid #25D366;
+    }
+
+    /* secondary nav */
+.sub-nav {
+  padding: 14px 0;
+}
+
+.sub-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* links center */
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.sub-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.sub-nav a i {
+  font-size: 22px;
+}
+
+.sub-nav a:hover,
+.sub-nav a.active {
+  background: #000000; /* red hover/active bg */
+  color: white; /* text white */
+}
+
+.home-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #d63a3a; /* home icon same color */
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.home-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(214,58,58,0.6);
+}
+
+/* Responsive for mobile - no scroll, icons removed */
+@media (max-width: 768px) {
+  .sub-nav {
+    padding: 6px 0; /* vertical padding chhota */
+  }
+
+  .sub-nav .container {
+    justify-content: space-between; /* evenly spread links */
+    gap: 0; /* gap remove */
+    flex-wrap: nowrap; /* ek line me rahe */
+    width: 100%;
+  }
+
+  .sub-nav a {
+    padding: 6px 0;       /* top-bottom padding chhota */
+    font-size: 12px;      /* chhota text */
+    flex: 1;              /* equally spread */
+    justify-content: center; /* text center */
+  }
+
+  .sub-nav a i {
+    display: none; /* icons hide */
+  }
+}
+.read-text strong {
+  color: #000000; /* Dark black */
+}
+
+   .whatsapp-icon {
+  width: 20px;        /* adjust size as needed */
+  height: 20px;
+  object-fit: contain; /* keeps the icon proportional */
+  transition: transform 0.3s; /* optional: for hover effect */
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.2); /* optional: small zoom on hover */
+}
+.whatsapp-link a {
+  color: #1DA851;           /* default greenish-blue color */
+  text-decoration: none;     /* no underline by default */
+  transition: all 0.3s;
+}
+
+.whatsapp-link a:hover {
+  color: #007BFF;           /* hover color, different shade of blue */
+  text-decoration: underline; /* underline appears on hover */
+}
+@media (max-width: 768px) {
+  #maintable {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Mobile view font bigger */
+@media (max-width: 768px) {
+  #maintable tbody td {
+    font-size: 11px;   /* thoda bada */
+    font-weight: 500;  /* thoda bold for readability */
+  }
+}
+@media (max-width: 768px) {
+  .agent-form-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+/* Footer */
+footer {
+    background-color: #25D366;   /* WhatsApp green */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+  </style>
+
+  <style>
+/* Hamburger button */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  color: #d63a3a; /* theme red */
+  transition: transform 0.2s ease-in-out;
+  z-index: 1100;
+  position: relative;
+}
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: -70%;
+  width: 70%;
+  max-width: 300px;   /* optional: large screen mein fix width */
+  height: 100%;
+  background: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.4s ease-in-out;
+  z-index: 1050;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.5);
+}
+
+/* Menu links */
+.hamburger-menu a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s, padding-left 0.2s;
+}
+.hamburger-menu a:hover {
+  background: rgba(255,255,255,0.12);
+  padding-left: 25px;   /* little slide effect */
+}
+
+/* Overlay only covers remaining screen */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 100%;       /* 🔹 overlay starts AFTER menu */
+  width: 0%;      /* 🔹 only cover remaining area */
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1000;
+}
+
+.hamburger-menu.active ~ .overlay {
+  display: block;
+}
+
+/* Active state */
+.hamburger-menu.active { left: 0; }
+.overlay.active { display: block; }
+
+/* Heading top fixed */
+.menu-heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: #d63a3a;
+  padding: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.nav-center .nav-link {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(69, 2, 255);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.nav-center .nav-link:hover {
+  color: rgb(255, 0, 0); /* hover pe halka effect */
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- top nav -->
+  <div class="top-nav">
+  <div class="container">
+    <a href="./nav/customer.html" style="color: inherit; text-decoration: none;">
+      কাস্টমার সার্ভিস
+    </a>
+  </div>
+</div>
+
+<!-- main navbar -->
+<div class="main-nav">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
+
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.php">
+        <img src="logo1.0.png" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Center Navbar Text -->
+    <div class="nav-center">
+      <a href="https://velkiagentslistbd.com" class="nav-link">www.vekliagentlist.com</a>
+    </div>
+
+    <!-- Right Side (Date + Hamburger) -->
+    <div style="display:flex; align-items:center; gap:15px;">
+      <div class="date-box">
+        <div class="date-num" id="dayNum">26</div>
+        <div class="date-text">
+          <span id="dayName">Tue</span><br>
+          <span id="monthName">Aug</span>
+        </div>
+      </div>
+
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburgerBtn">
+        <i class="bi bi-list"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- red line -->
+<div class="red-line"></div>
+
+<!-- Secondary Nav -->
+<div class="sub-nav">
+  <div class="container">
+    <a href="index.php" data-type="ALL" class="active"><i class="bi bi-house-door-fill"></i> Home</a>
+    <a href="index.php" data-type="ADMIN"><i class="bi bi-shield-lock-fill"></i> Admin</a>
+    <a href="index.php" data-type="SUB-ADMIN"><i class="bi bi-person-badge-fill"></i> Sub-Admin</a>
+    <a href="index.php" data-type="SUPER"><i class="bi bi-person-gear"></i> Super</a>
+    <a href="index.php" data-type="MASTER"><i class="bi bi-person-fill"></i> Master</a>
+  </div>
+</div>  
+
+
+
+<!-- Hamburger Menu -->
+<div class="hamburger-menu" id="menu">
+  <!-- Heading -->
+  <div class="menu-heading">
+    MENU
+    <span id="closeBtn" style="float:right; cursor:pointer;">✖</span>
+  </div>
+
+  <!-- FAQ Heading -->
+    <p><i class="bi bi-question-circle"></i> Frequently Asked Questions</p>
+    <a href="../cards/card8.html"><i class="bi bi-pencil-square"></i> How to Create an Account?</a> 
+    <a href="../cards/card4.html"><i class="bi bi-person-plus"></i> How To Become a Velki Agent</a>
+    <br>
+    <p><i class="bi bi-people-fill"></i> Agent List</p>
+  <a href="./nav/admin.html"><i class="bi bi-shield-lock-fill"></i> Site Admin</a>
+  <a href="./nav/subadmin.html"><i class="bi bi-person-badge-fill"></i> Sub Admin</a>
+  <a href="./nav/super.html"><i class="bi bi-star-fill"></i> Super Agent</a>
+  <a href="#"><i class="bi bi-award-fill"></i> Master Agent</a>
+  <a href="./nav/customer.html"><i class="bi bi-headset"></i> Customer Service</a>
+  <a href="https://velki123.com/#/home"><i class="bi bi-link-45deg"></i> Link</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Admin Login Section -->
+<div class="container mt-4"> <!-- 👈 mt-4 = ~15-20px gap navbar ke niche -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card shadow-lg p-4">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold">Admin Login</h3>
+          <p class="text-muted">Enter your credentials</p>
+        </div>
+        <form action="login.php" method="POST">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 VelkiAgentList. All Rights Reserved | Powered by ARMAN MALIK
+</footer>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // auto update date
+    const date = new Date();
+    const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    document.getElementById("dayNum").innerText = date.getDate();
+    document.getElementById("dayName").innerText = days[date.getDay()];
+    document.getElementById("monthName").innerText = months[date.getMonth()];
+
+    // toggle hamburger menu
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // close menu on click outside
+    document.addEventListener("click", function(e) {
+      const menu = document.getElementById("menu");
+      const burger = document.querySelector(".hamburger");
+      if (!menu.contains(e.target) && !burger.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+
+<script>
+const hamburger = document.getElementById("hamburgerBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+
+// 🔹 Open menu
+function openMenu() {
+  menu.classList.add("active");
+  overlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+// 🔹 Close menu
+function closeMenu() {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+// Toggle hamburger
+hamburger.addEventListener("click", () => {
+  if (menu.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+// ✅ Overlay click → menu close
+overlay.addEventListener("click", () => {
+  closeMenu();
+});
+
+// ❌ button close
+closeBtn.addEventListener("click", closeMenu);
+</script>
+</body>
+</html>

@@ -1,3 +1,28 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Database connection
+$servername = "localhost";  
+$username   = "velkiage";   // tumhara db username
+$password   = "rvJh5N)0PNb-03";   // tumhara db password
+$database   = "velkiage_velki_agents";  // ✅ correct db name
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch data from agents_list table
+$sql = "SELECT role, name, agent_id, whatsapp, phone, admin 
+        FROM agents_list 
+        ORDER BY RAND()";
+$result = $conn->query($sql);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +36,14 @@
 
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 
    <meta property="og:title" content="Velki Agent List - ভেলকি এজেন্ট লিস্ট Online Betting Site BD" />
 <meta property="og:description" content="Explore the trusted Velki Agent List (ভেলকি এজেন্ট লিস্ট) for secure online betting. Join Velki, a reliable platform offering top-notch betting experiences and trusted agents!" />
 <meta property="og:image" content="https://agentallvelki.com/public/default-image.jpg" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
 
@@ -25,6 +53,8 @@
  <meta name="google-site-verification" content="fDHTIdyNCy5z8UCHXixUffvPdKqiYGwToOwYuF3gDN0"/>
  <!-- Event snippet for Page view conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -91,7 +121,7 @@ function gtag_report_conversion(url) {
 
 /* Date Box */
 .date-box {
-  border: 1px solid #ddd;
+  border: 2px solid #000000ff;
   border-radius: 30px;
   padding: 6px 12px;
   display: flex;
@@ -110,40 +140,6 @@ function gtag_report_conversion(url) {
   line-height: 1.2;
   text-align: left;
 }
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 15px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  width: 180px;
-  z-index: 1000;
-}
-
-.hamburger-menu a {
-  display: block;
-  padding: 10px 15px;
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.hamburger-menu a:hover {
-  background: #f5f5f5;
-}
-
 /* Responsive for Mobile */
 @media (max-width: 768px) {
   .main-nav {
@@ -157,10 +153,6 @@ function gtag_report_conversion(url) {
 
   .date-box {
     padding: 4px 8px;
-  }
-
-  .hamburger {
-    display: block;
   }
 
   /* Center text hide on mobile if needed */
@@ -277,24 +269,7 @@ function gtag_report_conversion(url) {
   color: #007BFF;           /* hover color, different shade of blue */
   text-decoration: underline; /* underline appears on hover */
 }
-@media (max-width: 768px) {
-  #maintable {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
 
-/* Mobile view font bigger */
-@media (max-width: 768px) {
-  #maintable tbody td {
-    font-size: 11px;   /* thoda bada */
-    font-weight: 500;  /* thoda bold for readability */
-  }
-}
 @media (max-width: 768px) {
   .agent-form-wrapper {
     margin-top: 0 !important;
@@ -304,32 +279,181 @@ function gtag_report_conversion(url) {
   }
 }
 
-  </style>
+
+  
+#agentForm button:hover {
+    background-color: #218838;
+    box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 576px) {
+    #agentForm {
+        flex-direction: column;
+        align-items: center;
+    }
+    #agentForm .form-select,
+    #agentForm .form-control,
+    #agentForm button {
+        flex: 1 1 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    #agentForm button {
+        margin-top: 10px;
+    }
+}
+
+#agentSearchSection h2 {
+    text-align: center;
+}
+
+
+</style>
+<style>
+.marquee-container {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-text {
+  white-space: nowrap;
+  padding-right: 3rem;  /* do line ke beech thoda gap */
+  font-size: 1.1rem;    /* 🔥 font size thoda bara */
+  font-weight: 600;
+  line-height: 2.5rem;  /* 🔥 height thoda increase */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+<style>
+/* Hamburger button */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  color: #d63a3a; /* theme red */
+  transition: transform 0.2s ease-in-out;
+  z-index: 1100;
+  position: relative;
+}
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: -70%;
+  width: 70%;
+  max-width: 300px;   /* optional: large screen mein fix width */
+  height: 100%;
+  background: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.4s ease-in-out;
+  z-index: 1050;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.5);
+}
+
+/* Menu links */
+.hamburger-menu a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s, padding-left 0.2s;
+}
+.hamburger-menu a:hover {
+  background: rgba(255,255,255,0.12);
+  padding-left: 25px;   /* little slide effect */
+}
+
+/* Overlay only covers remaining screen */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 100%;       /* 🔹 overlay starts AFTER menu */
+  width: 0%;      /* 🔹 only cover remaining area */
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1000;
+}
+
+.hamburger-menu.active ~ .overlay {
+  display: block;
+}
+
+/* Active state */
+.hamburger-menu.active { left: 0; }
+.overlay.active { display: block; }
+
+/* Heading top fixed */
+.menu-heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: #d63a3a;
+  padding: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.faq-list a {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: black; /* default color */
+}
+
+.faq-list a:hover {
+    background-color: #f0f0f0; /* optional, ya jo color chahiye */
+    color: black; /* text hamesha black rahe hover me bhi */
+}
+
+.faq-list a div h1,
+.faq-list a div p {
+    margin: 0;
+    color: inherit; /* inherit ensures hover me bhi black rahe */
+}
+
+</style>
 </head>
 <body>
 
   <!-- top nav -->
   <div class="top-nav">
-    <div class="container">
+  <div class="container">
+    <a href="./nav/customer.html" style="color: inherit; text-decoration: none;">
       কাস্টমার সার্ভিস
-    </div>
+    </a>
   </div>
+</div>
 
-  <!-- main navbar -->
+<!-- main navbar -->
 <div class="main-nav">
   <div class="container" style="display:flex; align-items:center; justify-content:space-between;">
 
     <!-- Logo -->
-<div class="logo">
-  <a href="index.html">
-    <img src="logo1.0.png" alt="Logo">
-  </a>
-</div>
-
+    <div class="logo">
+      <a href="index.php">
+        <img src="logo1.0.png" alt="Logo">
+      </a>
+    </div>
 
     <!-- Center Navbar Text -->
     <div class="nav-center">
-      <a href="#" class="nav-link">www.vekliagentlist.com</a>
+      <a href="https://velkiagentslistbd.com" class="nav-link">www.vekliagentlist.com</a>
     </div>
 
     <!-- Right Side (Date + Hamburger) -->
@@ -343,16 +467,15 @@ function gtag_report_conversion(url) {
       </div>
 
       <!-- Hamburger Icon -->
-      <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" id="hamburgerBtn">
         <i class="bi bi-list"></i>
       </div>
     </div>
   </div>
 </div>
 
-
-  <!-- red line -->
-  <div class="red-line"></div>
+<!-- red line -->
+<div class="red-line"></div>
 
 <!-- Secondary Nav -->
 <div class="sub-nav">
@@ -367,294 +490,338 @@ function gtag_report_conversion(url) {
 
 
 
-  <!-- Hamburger Menu -->
-  <div class="hamburger-menu" id="menu">
-    <a href="#"><i class="bi bi-person-circle"></i> Profile</a>
-    <a href="#"><i class="bi bi-gear-fill"></i> Settings</a>
-    <a href="#"><i class="bi bi-question-circle"></i> Help</a>
-    <a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a>
+<!-- Hamburger Menu -->
+<div class="hamburger-menu" id="menu">
+  <!-- Heading -->
+  <div class="menu-heading">
+    MENU
+    <span id="closeBtn" style="float:right; cursor:pointer;">✖</span>
   </div>
 
+  <!-- FAQ Heading -->
+    <p><i class="bi bi-question-circle"></i> Frequently Asked Questions</p>
+    <a href="../cards/card8.html"><i class="bi bi-pencil-square"></i> How to Create an Account?</a> 
+    <a href="../cards/card4.html"><i class="bi bi-person-plus"></i> How To Become a Velki Agent</a>
+    <br>
+    <p><i class="bi bi-people-fill"></i> Agent List</p>
+  <a href="./nav/admin.html"><i class="bi bi-shield-lock-fill"></i> Site Admin</a>
+  <a href="./nav/subadmin.html"><i class="bi bi-person-badge-fill"></i> Sub Admin</a>
+  <a href="./nav/super.html"><i class="bi bi-star-fill"></i> Super Agent</a>
+  <a href="#"><i class="bi bi-award-fill"></i> Master Agent</a>
+  <a href="./nav/customer.html"><i class="bi bi-headset"></i> Customer Service</a>
+  <a href="https://velki123.com/#/home"><i class="bi bi-link-45deg"></i> Link</a>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
 
 
-<!-- Agent Search Section (VISIBLE by default) -->
-<div id="agentSearchSection">
-  <h2 class="text-xl font-semibold text-center text-gray-800 mb-4 mt-5">
-      এজেন্ট এর আইডি নাম্বার দিয়ে খুজুন:
+
+
+<!-- Agent Search Section -->
+<div class="flex flex-col items-center px-4 py-8">
+
+  <!-- Heading -->
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">
+    Search Agent by ID
   </h2>
 
-  <div class="flex items-center justify-center m-5 md:m-0 agent-form-wrapper">
-    <div class="w-full max-w-sm p-6 bg-white rounded-lg drop-shadow-lg">
+  <!-- Form Card -->
+  <div class="bg-white shadow-lg rounded-xl p-5 w-full max-w-lg">
+    
+    <!-- Role + ID Inputs -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-4">
+      <select id="agentType" name="agentType"
+        class="w-full sm:w-1/2 border-2 border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400">
+        <option value="">All Roles</option>
+        <option value="Admin">Admin</option>
+        <option value="Sub-Admin">Sub-Admin</option>
+        <option value="Super">Super</option>
+        <option value="Master">Master</option>
+      </select>
 
-      <form id="agentForm">
-        <div class="mb-4">
-          <label class="block font-bold text-gray-700 text-sm mb-2" for="agentType">
-            Agent Type:
-          </label>
-          <select id="agentType" name="agentType" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="ma">মাষ্টার এজেন্ট</option>
-            <option value="sa">সুপার এজেন্ট</option>
-            <option value="sad">সাব এডমিন</option>
-          </select>
-        </div>
-
-        <div class="mb-4">
-          <label class="block font-bold text-gray-700 text-sm mb-2" for="agentId">
-            Agent ID:
-          </label>
-          <input type="text" id="agentId" name="agentId" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Agent ID">
-        </div>
-
-        <div>
-          <button type="submit" class=" bg-green-500 text-white font-semibold py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 w-full">
-            Submit
-          </button>
-        </div>
-      </form>
-
-      <!-- Result -->
-      <div id="agentResult" class="mt-4 text-center font-medium text-gray-700"></div>
-
+      <input type="text" id="agentId" name="agentId" placeholder="Enter Agent ID"
+        class="w-full sm:w-1/2 border-2 border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400">
     </div>
+
+    <!-- Search Button -->
+    <div class="flex justify-center">
+      <button id="searchBtn"
+        class="bg-gradient-to-r from-green-500 to-teal-400 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition w-full sm:w-auto">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <!-- Result Box -->
+  <div id="agentResult" class="w-full max-w-lg mt-6"></div>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+    $("#searchBtn").on("click", function(e){
+        e.preventDefault();
+
+        var formData = {
+            agentType: $("#agentType").val(),
+            agentId: $("#agentId").val()
+        };
+
+        // Show loading spinner
+        $("#agentResult").html(`
+            <div class="text-center p-3" style="border-radius:10px; background:#f0f8ff; box-shadow:0 4px 10px rgba(0,0,0,0.1); max-width:600px; margin:auto;">
+                <div class="spinner-border text-success" role="status" style="width:2rem; height:2rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2 mb-0" style="font-weight:500; color:#555;">Searching agent...</p>
+            </div>
+        `);
+
+        $.ajax({
+            url: 'search_agent.php',
+            type: 'POST',
+            data: formData,
+            success: function(data){
+                $("#agentResult").hide().html(data).fadeIn(300); // direct PHP ka response inject
+            },
+            error: function(){
+                $("#agentResult").html(`
+                    <div class="text-center p-3" style="border-radius:10px; background:#ffe5e5; box-shadow:0 4px 10px rgba(0,0,0,0.1); max-width:600px; margin:auto; color:red; font-weight:600;">
+                        Error fetching data!
+                    </div>
+                `);
+            }
+        });
+    });
+});
+$(document).ready(function(){
+
+    // Existing search button code yahan rahega...
+
+    // Navigation tab click event
+    $(".sub-nav a").on("click", function(e){
+        e.preventDefault();
+
+        // sabse pehle active class reset karo
+        $(".sub-nav a").removeClass("active");
+        $(this).addClass("active");
+
+        let type = $(this).data("type"); // jis nav pe click kiya uska data-type
+
+        if(type === "ALL" || type === "ADMIN"){
+            // hide search section
+            $(".flex.flex-col.items-center.px-4.py-8").hide();
+        } else {
+            // show search section
+            $(".flex.flex-col.items-center.px-4.py-8").show();
+        }
+    });
+
+    // By default Home active hai, toh search section hide kar dete hai
+    $(".flex.flex-col.items-center.px-4.py-8").hide();
+});
+
+</script>
+
+
+
+<div class="w-full px-2 sm:px-4 lg:px-8 mt-4">
+  <div class="border border-gray-300 rounded-xl shadow-lg overflow-hidden">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-red-500 to-red-700 text-white text-center font-bold text-lg sm:text-xl py-3">
+      VELKI AGENT LIST
+    </div>
+    <hr>
+    <!-- Notice -->
+<div class="overflow-hidden bg-black text-white border-b border-gray-300">
+  <div class="marquee-container">
+    <p class="marquee-text">
+      হোয়াটসঅ্যাপ ব্যতীত অন্য কোন app এর মাধ্যমে যোগাযোগ বা লেনদেন করা যাবে না এবং করলে তা গ্রহণযোগ্য হবে না
+    </p>
+    <p class="marquee-text">
+      হোয়াটসঅ্যাপ ব্যতীত অন্য কোন app এর মাধ্যমে যোগাযোগ বা লেনদেন করা যাবে না এবং করলে তা গ্রহণযোগ্য হবে না
+    </p>
   </div>
 </div>
 
-<script>
-  // Sample agent data (static)
-  const agents = [
-    { type: "ma", id: "01", name: "Joshim", phone: "+639301111111" },
-    { type: "sa", id: "02", name: "Rafiq", phone: "+639302222222" },
-    { type: "sad", id: "03", name: "Hart", phone: "+639303333333" }
-  ];
 
-  // Nav links click handler
-  document.querySelectorAll(".sub-nav a").forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      const type = this.getAttribute("data-type");
-      const section = document.getElementById("agentSearchSection");
+<div class="w-full overflow-hidden mt-0">
+  <table class="agent-table w-full border-2 border-black text-xs sm:text-sm table-fixed border-collapse">
+    <thead class="bg-blue-900 text-white">
+  <tr>
+    <th class="px-2 py-2 w-[19%] text-center border-2 border-black bg-blue-900">Type</th>
+    <th class="px-2 py-2 w-[19%] text-center border-2 border-black bg-blue-900">Name</th>
+    <th class="px-2 py-2 w-[12%] text-center border-2 border-black bg-blue-900">ID</th>
+    <th class="px-2 py-2 w-[10%] text-center border-2 border-black bg-blue-900">WA</th>
+    <th class="px-2 py-2 w-[27%] text-center border-2 border-black bg-blue-900">Phone</th>
+    <th class="px-2 py-2 w-[15%] text-center border-2 border-black bg-blue-900">Admin</th>
+  </tr>
+</thead>
 
-      if(type === "ADMIN") {
-        section.style.display = "none";  // hide for Admin
-      } else {
-        section.style.display = "block"; // show for all others
-      }
-    });
-  });
+   <tbody class="text-black font-bold">
+<?php
+if ($result->num_rows > 0) {
+    $i = 0; // row counter
+    while($row = $result->fetch_assoc()) {
+        $role = strtoupper(trim($row['role']));
+        $displayRole = ($role === "ADMIN") ? "ADMIN" : "HOME";
 
-  // Search function
-  document.getElementById("agentForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+        // Alternate row pastel colors
+        $bgColor = ($i % 2 === 0) ? 'bg-pink-50' : 'bg-green-50';
+        $i++;
 
-    let type = document.getElementById("agentType").value;
-    let id = document.getElementById("agentId").value.trim();
-    let resultBox = document.getElementById("agentResult");
-
-    let agent = agents.find(a => a.type === type && a.id === id);
-
-    if(agent) {
-      resultBox.innerHTML = `
-        ✅ Agent Found <br>
-        <strong>Name:</strong> ${agent.name}<br>
-        <strong>Phone:</strong> ${agent.phone}
-      `;
-      resultBox.style.color = "green";
-    } else {
-      resultBox.innerHTML = "❌ Agent not found!";
-      resultBox.style.color = "red";
+        echo '<tr class="'.$bgColor.'">
+                <td class="px-2 py-2 text-center border-2 border-black font-bold text-black">'.$displayRole.'</td>
+                <td class="px-2 py-2 text-center border-2 border-black font-bold text-black">'.htmlspecialchars($row['name']).'</td>
+                <td class="px-2 py-2 text-center border-2 border-black font-bold text-black">'.htmlspecialchars($row['agent_id']).'</td>
+                <td class="px-2 py-2 text-center border-2 border-black">
+                  <a href="https://wa.me/'.htmlspecialchars($row['phone']).'" target="_blank">
+                    <img src="whatsapp.png" alt="WA" class="w-7 h-5 mx-auto">
+                  </a>
+                </td>
+                <td class="px-2 py-2 text-left border-2 border-black font-bold text-black">
+                  <a href="https://wa.me/'.htmlspecialchars($row['phone']).'" target="_blank" class="text-blue-600 underline hover:text-red-600">
+                    '.htmlspecialchars($row['phone']).'
+                  </a>
+                </td>
+                <td class="px-2 py-2 text-center border-2 border-black font-bold text-black">
+                  <a href="https://wa.me/'.htmlspecialchars($row['admin']).'" target="_blank" class="text-blue-600 underline hover:text-red-600">
+                    '.htmlspecialchars($row['admin']).'
+                  </a>
+                </td>
+              </tr>';
     }
-  });
-</script>
-
-<!-- Full Agent Table -->
-<div id="maintable" class="container mt-4">
-  <table class="table table-bordered" id="agentTable">
-    <thead>
-      <!-- Title row -->
-      <tr>
-        <th colspan="6" class="text-center text-danger fw-bold">
-          VELKI AGENT LIST
-        </th>
-      </tr>
-      <!-- Notice row -->
-      <tr>
-        <th colspan="6" class="notice-cell">
-          <div class="notice-text">
-            হোয়াটসঅ্যাপ ব্যতীত অন্য কোন app এর মাধ্যমে যোগাযোগ বা লেনদেন করা যাবে না এবং করলে তা গ্রহণযোগ্য হবে না
-          </div>
-        </th>
-      </tr>
-
-    </thead>
-    <!-- Table -->
-<table>
-  <thead>
-    <tr class="header-row">
-      <th>Role</th>
-      <th>Name</th>
-      <th>ID</th>
-      <th>WhatsApp</th>
-      <th>Phone</th>
-      <th>Admin</th>
-    </tr>
-  </thead>
-  <tbody>
-  <!-- Admin -->
-  <tr data-type="ADMIN">
-    <td>ADMIN</td>
-    <td>Arman Malik</td>
-    <td>01</td>
-    <td class="text-center">
-      <a href="https://wa.me/639308682092" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-      </a>
-    </td>
-    <td class="whatsapp-link">
-      <a href="https://wa.me/639308682092" target="_blank">+639308682092</a>
-    </td>
-    <td>অ্যাডমিন</td>
-  </tr>
-
-  <!-- Master -->
-  <tr data-type="MASTER">
-    <td>MASTER</td>
-    <td>Joshim</td>
-    <td>02</td>
-    <td class="text-center">
-      <a href="https://wa.me/639301234567" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-      </a>
-    </td>
-    <td class="whatsapp-link">
-      <a href="https://wa.me/639301234567" target="_blank">+639301234567</a>
-    </td>
-    <td>মাষ্টার এজেন্ট</td>
-  </tr>
-
-  <!-- Office -->
-  <tr data-type="OFFICE">
-    <td>OFFICE</td>
-    <td>Rafiq</td>
-    <td>03</td>
-    <td class="text-center">
-      <a href="https://wa.me/639302345678" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-      </a>
-    </td>
-    <td class="whatsapp-link">
-      <a href="https://wa.me/639302345678" target="_blank">+639302345678</a>
-    </td>
-    <td>অফিস এজেন্ট</td>
-  </tr>
-
-  <!-- Home -->
-  <tr data-type="HOME">
-    <td>HOME</td>
-    <td>Arafat</td>
-    <td>06</td>
-    <td class="text-center">
-      <a href="https://wa.me/639303456789" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-      </a>
-    </td>
-    <td class="whatsapp-link">
-      <a href="https://wa.me/639303456789" target="_blank">+639303456789</a>
-    </td>
-    <td>হোম এজেন্ট</td>
-  </tr>
-
-  <!-- Sub-Admin -->
-  <tr data-type="SUB-ADMIN">
-    <td>SUB-ADMIN</td>
-    <td>Hart</td>
-    <td>12</td>
-    <td class="text-center">
-      <a href="https://wa.me/639304567890" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-      </a>
-    </td>
-    <td class="whatsapp-link">
-      <a href="https://wa.me/639304567890" target="_blank">+639304567890</a>
-    </td>
-    <td>সাব-এডমিন</td>
-  </tr>
-
-  <!-- Super -->
-  <tr data-type="SUPER">
-    <td>SUPER</td>
-    <td>Bilal</td>
-    <td>18</td>
-    <td class="text-center">
-      <a href="https://wa.me/639305678901" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
-      </a>
-    </td>
-    <td class="whatsapp-link">
-      <a href="https://wa.me/639305678901" target="_blank">+639305678901</a>
-    </td>
-    <td>সুপার এজেন্ট</td>
-  </tr>
+} else {
+    echo '<tr><td colspan="6" class="text-center text-gray-500">No data found</td></tr>';
+}
+?>
 </tbody>
 
-</table>
   </table>
 </div>
 
 
+
+
+        
 <script>
+// --- Select elements (existing JS) ---
 const links = document.querySelectorAll('.sub-nav a');
-const tableBody = document.querySelector('table tbody');
-const rows = Array.from(tableBody.querySelectorAll('tr'));
+const tableBody = document.querySelector('.agent-table tbody');
+const agentForm = document.getElementById('agentForm');
+const agentTypeInput = document.getElementById('agentType');
+const agentIdInput = document.getElementById('agentId');
+const agentResultDiv = document.getElementById('agentResult');
+const agentSearchSection = document.getElementById('agentSearchSection');
 
-// Function to shuffle an array
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
+// ✅ Example: search/filter without touching classes
+function filterAgents(searchTerm) {
+    const rows = tableBody.querySelectorAll('tr');
+    rows.forEach(row => {
+        // content check
+        if (row.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+            row.style.display = '';   // show row
+        } else {
+            row.style.display = 'none'; // hide row
+        }
+    });
 }
 
-function filterRows(type) {
-  // Separate Admin row
-  const adminRow = rows.find(row => row.getAttribute('data-type') === 'ADMIN');
-
-  // Filter other rows
-  let otherRows;
-  if (type === 'ALL') {
-    otherRows = rows.filter(row => row.getAttribute('data-type') !== 'ADMIN');
-  } else {
-    otherRows = rows.filter(row => row.getAttribute('data-type') === type && row.getAttribute('data-type') !== 'ADMIN');
-  }
-
-  // Shuffle the other rows
-  otherRows = shuffleArray(otherRows);
-
-  // Clear tbody and append rows: Admin on top + shuffled rows
-  tableBody.innerHTML = '';
-  if(adminRow) tableBody.appendChild(adminRow);
-  otherRows.forEach(row => tableBody.appendChild(row));
-
-  // Update active link
-  links.forEach(l => l.classList.remove('active'));
-  const activeLink = document.querySelector(`.sub-nav a[data-type="${type}"]`);
-  if(activeLink) activeLink.classList.add('active');
-}
-
-// Click on nav links
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const type = link.getAttribute('data-type');
-    filterRows(type);
-    history.pushState(null, null, '#' + type);
-  });
+// --- Example: input listener ---
+agentIdInput.addEventListener('input', () => {
+    filterAgents(agentIdInput.value);
 });
 
-// On page load
+// Notice: tableBody.innerHTML is NEVER overwritten
+// Classes like 'px-2 py-2 text-center border-2 border-black font-bold text-black'
+// are untouched and Tailwind will work normally
+
+
+// --- Fetch agents dynamically ---
+function fetchAgents(role = 'ALL') {
+    // Add unique params to force shuffle on every fetch
+    const url = `fetch_agents.php?role=${encodeURIComponent(role)}&t=${Date.now()}&rand=${Math.random()}`;
+
+    fetch(url, { cache: "no-store" }) // force no cache
+        .then(res => res.text())
+        .then(html => {
+            tableBody.innerHTML = html; // Fill table body with shuffled data
+        })
+        .catch(err => {
+            console.error("Fetch error:", err);
+            tableBody.innerHTML = "<tr><td colspan='6'>Error fetching data!</td></tr>";
+        });
+}
+
+// --- Toggle search bar visibility ---
+function toggleSearchBar(role) {
+    if (role.toUpperCase() === 'ALL' || role.toUpperCase() === 'ADMIN') {
+        agentSearchSection.style.display = 'none';
+        agentTypeInput.value = '';
+        agentIdInput.value = '';
+        agentResultDiv.innerHTML = '';
+    } else {
+        agentSearchSection.style.display = 'flex';
+    }
+}
+
+// --- Handle nav clicks ---
+links.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const type = link.getAttribute('data-type');
+
+        fetchAgents(type);      // Load table for selected role (shuffled)
+        toggleSearchBar(type);  // Show/hide search
+
+        // Update active class
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        // Update URL hash
+        history.pushState(null, null, '#' + type);
+    });
+});
+
+// --- On page load ---
 window.addEventListener('DOMContentLoaded', () => {
-  const hash = location.hash.replace('#', '') || 'ALL';
-  filterRows(hash);
+    const hash = location.hash.replace('#', '') || 'ALL';
+    fetchAgents(hash);      // Initial load with shuffle
+    toggleSearchBar(hash);
+
+    links.forEach(l => l.classList.remove('active'));
+    const activeLink = document.querySelector(`.sub-nav a[data-type="${hash}"]`);
+    if (activeLink) activeLink.classList.add('active');
+});
+
+// --- Agent search form ---
+agentForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const agentType = agentTypeInput.value.trim();
+    const agentId = agentIdInput.value.trim();
+
+    if (!agentType || !agentId) {
+        agentResultDiv.innerHTML = "<div style='padding:10px; color:red; font-weight:600;'>Please select a role and enter Agent ID.</div>";
+        return;
+    }
+
+    fetch('search_agent.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `agentType=${encodeURIComponent(agentType)}&agentId=${encodeURIComponent(agentId)}`
+    })
+    .then(res => res.text())
+    .then(data => {
+        agentResultDiv.innerHTML = data;
+    })
+    .catch(err => {
+        agentResultDiv.innerHTML = "<div style='padding:10px; color:red; font-weight:600;'>Error fetching data!</div>";
+        console.error(err);
+    });
 });
 </script>
 
@@ -982,7 +1149,7 @@ window.addEventListener('DOMContentLoaded', () => {
 </section>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const rows = document.querySelectorAll("tr"); // সব Tr নেওয়া
+    const rows = document.querySelectorAll("tr"); // সব TR নেওয়া
 
     rows.forEach((row, index) => {
         if (index % 2 === 0) {
@@ -1021,24 +1188,42 @@ window.addEventListener('DOMContentLoaded', () => {
       <div class="footer-contact">
         <h4 style="color: #000000;">Contact Us</h4>
         <p>WhatsApp: <a href="https://wa.me/639308682092" target="_blank">+63 930 868 2092</a></p>
-        <p>Phone: <a href="tel:+639308682092">+63 930 868 3548</a></p>
+        <p>Phone: <a href="tel:+639308682092">+63 930 868 2092</a></p>
         <p>Email: <a href="mailto:info@velkiagentlist.com">info@velkiagentlist.com</a></p>
 
         <!-- Social Icons -->
-        <div class="footer-social">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div>
+        <div class="footer-social text-2xl">
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/groups/1652096408959195/?ref=share&mibextid=NSMWBT" target="_blank">
+    <i class="bi bi-facebook"></i>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/1234567890" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Website -->
+  <a href="https://velki123.com/#/login" target="_blank">
+    <i class="bi bi-globe text-xl"></i>
+  </a>
+</div>
       </div>
     </div>
 
     <!-- Bottom -->
-    <div class="footer-bottom" style="color: #000000;">
-      <p>&copy; 2025 Velki Agent List. All rights reserved.</p>
-      <p>Powered by ARMAN MALIK</p>
-    </div>
+<div class="footer-bottom" style="color: #000000; text-align:center; padding: 10px 0;">
+  <p>&copy; 2025 Velki Agent List. All rights reserved.</p>
+  <p>
+    Powered by 
+    <span style="font-weight:600;">ARMAN MALIK</span>
+    <a href="login.html" target="_blank" style="color: #000000; text-decoration: none; margin-left: 5px;">
+      <i class="fas fa-shield-alt" style="color: #8ab92d;"></i>
+    </a>
+  </p>
+</div>
+
+
   </div>
 </footer>
 
@@ -1096,20 +1281,45 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<!-- Shuffle Script -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const table = document.getElementById("agentTable");
-    const tbody = table.querySelector("tbody");
-    const rows = Array.from(tbody.querySelectorAll("tr"));
+const hamburger = document.getElementById("hamburgerBtn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
 
-    // Fisher-Yates Shuffle Algorithm
-    for (let i = rows.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      tbody.appendChild(rows[j]); 
-      rows.splice(j, 1); 
-    }
-  });
+// 🔹 Open menu
+function openMenu() {
+  menu.classList.add("active");
+  overlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+// 🔹 Close menu
+function closeMenu() {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+// Toggle hamburger
+hamburger.addEventListener("click", () => {
+  if (menu.classList.contains("active")) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+// ✅ Overlay click → menu close
+overlay.addEventListener("click", () => {
+  closeMenu();
+});
+
+// ❌ button close
+closeBtn.addEventListener("click", closeMenu);
 </script>
+
+
+
 </body>
 </html>

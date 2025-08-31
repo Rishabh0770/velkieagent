@@ -1,0 +1,172 @@
+[28-Aug-2025 05:14:02 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'YOUR_DB_USERNAME'@'localhost' (using password: YES) in /home/velkiage/public_html/add_agent.php:8
+Stack trace:
+#0 /home/velkiage/public_html/add_agent.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/add_agent.php on line 8
+[28-Aug-2025 05:16:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'YOUR_DB_USERNAME'@'localhost' (using password: YES) in /home/velkiage/public_html/add_agent.php:13
+Stack trace:
+#0 /home/velkiage/public_html/add_agent.php(13): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/add_agent.php on line 13
+[28-Aug-2025 05:35:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:37:34 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'velkiage'@'localhost' to database 'velki_agents' in /home/velkiage/public_html/index.php:8
+Stack trace:
+#0 /home/velkiage/public_html/index.php(8): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 8
+[28-Aug-2025 05:38:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agents' doesn't exist in /home/velkiage/public_html/index.php:20
+Stack trace:
+#0 /home/velkiage/public_html/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 20
+[28-Aug-2025 05:40:13 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agents' doesn't exist in /home/velkiage/public_html/index.php:20
+Stack trace:
+#0 /home/velkiage/public_html/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 20
+[28-Aug-2025 05:40:30 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agents' doesn't exist in /home/velkiage/public_html/index.php:20
+Stack trace:
+#0 /home/velkiage/public_html/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 20
+[28-Aug-2025 05:40:59 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agents' doesn't exist in /home/velkiage/public_html/index.php:20
+Stack trace:
+#0 /home/velkiage/public_html/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 20
+[28-Aug-2025 05:42:35 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agents' doesn't exist in /home/velkiage/public_html/index.php:20
+Stack trace:
+#0 /home/velkiage/public_html/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 20
+[28-Aug-2025 05:45:39 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agents' doesn't exist in /home/velkiage/public_html/index.php:20
+Stack trace:
+#0 /home/velkiage/public_html/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 20
+[28-Aug-2025 05:46:56 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agents' doesn't exist in /home/velkiage/public_html/index.php:20
+Stack trace:
+#0 /home/velkiage/public_html/index.php(20): mysqli->query()
+#1 {main}
+  thrown in /home/velkiage/public_html/index.php on line 20
+[28-Aug-2025 05:48:07 UTC] PHP Warning:  Undefined array key "id" in /home/velkiage/public_html/index.php on line 531
+[28-Aug-2025 05:48:07 UTC] PHP Warning:  Undefined array key "admin_name" in /home/velkiage/public_html/index.php on line 540
+[28-Aug-2025 05:49:47 UTC] PHP Warning:  Undefined array key "id" in /home/velkiage/public_html/index.php on line 531
+[28-Aug-2025 05:49:47 UTC] PHP Warning:  Undefined array key "admin_name" in /home/velkiage/public_html/index.php on line 540
+[28-Aug-2025 05:52:37 UTC] PHP Warning:  Undefined array key "id" in /home/velkiage/public_html/index.php on line 531
+[28-Aug-2025 05:52:37 UTC] PHP Warning:  Undefined array key "admin_name" in /home/velkiage/public_html/index.php on line 540
+[28-Aug-2025 06:39:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/velkiage/public_html/login.php:5
+Stack trace:
+#0 /home/velkiage/public_html/login.php(5): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/login.php on line 5
+[28-Aug-2025 06:41:57 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/velkiage/public_html/login.php on line 11
+[28-Aug-2025 06:41:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/velkiage/public_html/login.php:14
+Stack trace:
+#0 /home/velkiage/public_html/login.php(14): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/login.php on line 14
+[28-Aug-2025 06:44:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tuhara_hosting_username'@'localhost' (using password: YES) in /home/velkiage/public_html/login.php:16
+Stack trace:
+#0 /home/velkiage/public_html/login.php(16): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/login.php on line 16
+[28-Aug-2025 06:53:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tuhara_hosting_username'@'localhost' (using password: YES) in /home/velkiage/public_html/login.php:16
+Stack trace:
+#0 /home/velkiage/public_html/login.php(16): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/login.php on line 16
+[28-Aug-2025 06:53:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tuhara_hosting_username'@'localhost' (using password: YES) in /home/velkiage/public_html/login.php:16
+Stack trace:
+#0 /home/velkiage/public_html/login.php(16): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/login.php on line 16
+[28-Aug-2025 07:00:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tuhara_hosting_username'@'localhost' (using password: YES) in /home/velkiage/public_html/login.php:16
+Stack trace:
+#0 /home/velkiage/public_html/login.php(16): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/login.php on line 16
+[28-Aug-2025 07:00:18 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tuhara_hosting_username'@'localhost' (using password: YES) in /home/velkiage/public_html/login.php:16
+Stack trace:
+#0 /home/velkiage/public_html/login.php(16): mysqli->__construct()
+#1 {main}
+  thrown in /home/velkiage/public_html/login.php on line 16
+[28-Aug-2025 09:43:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agens_list' doesn't exist in /home/velkiage/public_html/search_agent.php:32
+Stack trace:
+#0 /home/velkiage/public_html/search_agent.php(32): mysqli->prepare()
+#1 {main}
+  thrown in /home/velkiage/public_html/search_agent.php on line 32
+[28-Aug-2025 10:12:05 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'velkiage_velki_agents.agens_list' doesn't exist in /home/velkiage/public_html/search_agent.php:34
+Stack trace:
+#0 /home/velkiage/public_html/search_agent.php(34): mysqli->prepare()
+#1 {main}
+  thrown in /home/velkiage/public_html/search_agent.php on line 34
+[28-Aug-2025 14:04:30 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/velkiage/public_html/index.php on line 548
+[28-Aug-2025 14:04:30 UTC] PHP Warning:  Undefined global variable $_SESSION in /home/velkiage/public_html/index.php on line 552
+[28-Aug-2025 14:04:30 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/velkiage/public_html/index.php on line 552
+[28-Aug-2025 14:06:37 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/velkiage/public_html/index.php on line 548
+[28-Aug-2025 14:06:37 UTC] PHP Warning:  Undefined global variable $_SESSION in /home/velkiage/public_html/index.php on line 552
+[28-Aug-2025 14:06:37 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/velkiage/public_html/index.php on line 552
+[28-Aug-2025 14:07:16 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/velkiage/public_html/index.php on line 548
+[28-Aug-2025 14:07:16 UTC] PHP Warning:  Undefined global variable $_SESSION in /home/velkiage/public_html/index.php on line 552
+[28-Aug-2025 14:07:16 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/velkiage/public_html/index.php on line 552
+[29-Aug-2025 07:24:20 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[29-Aug-2025 07:24:20 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11
+[29-Aug-2025 07:24:37 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[29-Aug-2025 07:24:37 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11
+[29-Aug-2025 10:46:44 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[29-Aug-2025 10:46:44 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11
+[30-Aug-2025 06:07:31 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[30-Aug-2025 06:07:31 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11
+[30-Aug-2025 06:07:31 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[30-Aug-2025 06:07:31 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11
+[30-Aug-2025 06:07:34 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[30-Aug-2025 06:07:34 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11
+[30-Aug-2025 16:00:07 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[30-Aug-2025 16:00:07 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11
+[30-Aug-2025 16:00:08 UTC] PHP Warning:  Undefined array key "username" in /home/velkiage/public_html/login.php on line 10
+[30-Aug-2025 16:00:08 UTC] PHP Warning:  Undefined array key "password" in /home/velkiage/public_html/login.php on line 11

@@ -1,3 +1,5 @@
+
+
 .nav-center .nav-link {
   font-size: 28px;
   font-weight: bold;
@@ -8,4 +10,81 @@
 
 .nav-center .nav-link:hover {
   color: orange; /* hover pe halka effect */
+}
+
+/* Hamburger button */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  color: #d63a3a; /* theme red */
+  transition: transform 0.2s ease-in-out;
+  z-index: 1100;
+  position: relative;
+}
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: -70%;
+  width: 70%;
+  max-width: 300px;   /* optional: large screen mein fix width */
+  height: 100%;
+  background: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.4s ease-in-out;
+  z-index: 1050;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.5);
+}
+
+/* Menu links */
+.hamburger-menu a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s, padding-left 0.2s;
+}
+.hamburger-menu a:hover {
+  background: rgba(255,255,255,0.12);
+  padding-left: 25px;   /* little slide effect */
+}
+
+/* Overlay only covers remaining screen */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 100%;       /* 🔹 overlay starts AFTER menu */
+  width: 0%;      /* 🔹 only cover remaining area */
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1000;
+}
+
+.hamburger-menu.active ~ .overlay {
+  display: block;
+}
+
+/* Active state */
+.hamburger-menu.active { left: 0; }
+.overlay.active { display: block; }
+
+/* Heading top fixed */
+.menu-heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: #d63a3a;
+  padding: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin: 0;
+  letter-spacing: 1px;
 }
